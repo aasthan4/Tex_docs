@@ -26,8 +26,8 @@ The Polarisation Propogator in superoperator representation is given by :
 
 \begin{equation*}\label{eq:propogator}
   \begin{aligned}
-    G_{pq,rs}\big(\omega\big)=\big \langle \Psi_{gr} |\big[ a_p a_q^\dagger , \big(\omega \hat I-\hat H \big)^{-1} a_r^\dagger a_s \big] | \Psi_{gr}\big \rangle \\
-    =\big \langle \Psi_{gr} |\big[ q_I , \big(\omega \hat I-\hat H \big)^{-1} q_J^\dagger \big] | \Psi_{gr}\big \rangle \\ 
+    G_{pq,rs}\big(\omega\big)&=\big \langle \Psi_{gr} |\big[ a_p a_q^\dagger , \big(\omega \hat I-\hat H \big)^{-1} a_r^\dagger a_s \big] | \Psi_{gr}\big \rangle \\
+   & =\big \langle \Psi_{gr} |\big[ q_I , \big(\omega \hat I-\hat H \big)^{-1} q_J^\dagger \big] | \Psi_{gr}\big \rangle \\ 
   \end{aligned}
 \end{equation*}
 A Binary Product can be defined as follows :
@@ -55,8 +55,8 @@ In our self consistant polarisation propogation theory, the unitary transformed 
 
 \begin{equation*}\label{eq:unitary transformed excitation}
   \begin{aligned}
-  \end{aligned}
     y_i^\dagger=\exp(\sigma) b_i^\dagger \exp(- \sigma)
+  \end{aligned}
 \end{equation*}
 Using the resolution of identity in G :
 
@@ -69,36 +69,37 @@ Using the resolution of identity in G :
 Taking the second half of the expression and expanding through tailors expansion :
 \begin{equation*}\label{eq:resolution of identity}
   \begin{aligned}
-    (y_I|(\omega \hat I - \hat H)^{-1}q_j^\dagger) =\big \langle \Psi_{gr} |\big[ y_I , \big(\omega \hat I-\hat H \big)^{-1} q_j^\dagger \big] | \Psi_{gr}\big \rangle \\ 
-     =\big \langle \Psi_{gr} |\big[ y_I , \frac{1}{ \omega} \Bigg( \big( \hat I-\hat H \big)\Bigg)^{-1} q_j^\dagger \big] | \Psi_{gr}\big \rangle \\ 
-     =\big \langle \Psi_{gr} |\big[ y_I , \frac{1}{\omega} \Bigg( \big( \hat I+ \frac{1}{ \omega} \hat H + \frac{1}{\omega^2}\hat H^2 ...\big)\Bigg) q_j^\dagger \big] | \Psi_{gr}\big \rangle \\ 
-     =\frac{1}{\omega }\Bigg(\big \langle \Psi_{gr} |\big[ y_I , \big( \hat I q_j^\dagger \big] | \Psi_{gr}\big \rangle +\big \langle \Psi_{gr} |\big[ y_I , \frac{1}{\omega}\hat H  q_j^\dagger \big] | \Psi_{gr}\big \rangle  +\big \langle \Psi_{gr} |\big[ y_I ,\frac{1}{\omega^2} \hat H^2  q_j^\dagger \big] | \Psi_{gr}\big \rangle \Bigg)\\ 
-     =\frac{1}{\omega} \Bigg(\big( y_I | \big( \hat I q_j^\dagger \big) +\big( y_I | \frac{1}{\omega}\hat H  q_j^\dagger \big) +\big( y_I |\frac{1}{\omega^2} \hat H^2  q_j^\dagger \big)\\ 
-     =\frac{1}{\omega} \Bigg(\big( y_I | \big( \hat I| q_j^\dagger \big) +\big( y_I | \frac{1}{\omega}\hat H | q_j^\dagger \big) +\big( y_I |\frac{1}{\omega^2} \hat H^2|  q_j^\dagger \big)...\Bigg)\\ 
-     =\frac{1}{\omega} \big( y_I | \big( \hat I + \frac{1}{\omega}\hat H + \frac{1}{\omega^2} \hat H^2 ...|  q_j^\dagger \big)\\ 
-     =\frac{1}{\omega} \big( y_I | \big( \hat I - \frac{\hat H}{\omega}\big)^{-1}|  q_j^\dagger \big)\\ 
-     = \big( y_I | \big( \omega\hat I - \hat H\big)^{-1}|  q_j^\dagger \big)\\ 
+    (y_I|(\omega \hat I - \hat H)^{-1}q_j^\dagger) &=\big \langle \Psi_{gr} |\big[ y_I , \big(\omega \hat I-\hat H \big)^{-1} q_j^\dagger \big] | \Psi_{gr}\big \rangle \\ 
+     &=\big \langle \Psi_{gr} |\big[ y_I , \frac{1}{ \omega} \Bigg( \big( \hat I-\hat H \big)\Bigg)^{-1} q_j^\dagger \big] | \Psi_{gr}\big \rangle \\ 
+     &=\big \langle \Psi_{gr} |\big[ y_I , \frac{1}{\omega} \Bigg( \big( \hat I+ \frac{1}{ \omega} \hat H + \frac{1}{\omega^2}\hat H^2 ...\big)\Bigg) q_j^\dagger \big] | \Psi_{gr}\big \rangle \\ 
+     &=\frac{1}{\omega }\Bigg(\big \langle \Psi_{gr} |\big[ y_I , \big( \hat I q_j^\dagger \big] | \Psi_{gr}\big \rangle +\big \langle \Psi_{gr} |\big[ y_I , \frac{1}{\omega}\hat H  q_j^\dagger \big] | \Psi_{gr}\big \rangle  +\big \langle \Psi_{gr} |\big[ y_I ,\frac{1}{\omega^2} \hat H^2  q_j^\dagger \big] | \Psi_{gr}\big \rangle \Bigg)\\ 
+     &=\frac{1}{\omega} \Bigg(\big( y_I | \big( \hat I q_j^\dagger \big) +\big( y_I | \frac{1}{\omega}\hat H  q_j^\dagger \big) +\big( y_I |\frac{1}{\omega^2} \hat H^2  q_j^\dagger \big)\\ 
+     &=\frac{1}{\omega} \Bigg(\big( y_I | \big( \hat I| q_j^\dagger \big) +\big( y_I | \frac{1}{\omega}\hat H | q_j^\dagger \big) +\big( y_I |\frac{1}{\omega^2} \hat H^2|  q_j^\dagger \big)...\Bigg)\\ 
+     &=\frac{1}{\omega} \big( y_I | \big( \hat I + \frac{1}{\omega}\hat H + \frac{1}{\omega^2} \hat H^2 ...|  q_j^\dagger \big)\\ 
+     &=\frac{1}{\omega} \big( y_I | \big( \hat I - \frac{\hat H}{\omega}\big)^{-1}|  q_j^\dagger \big)\\ 
+     &= \big( y_I | \big( \omega\hat I - \hat H\big)^{-1}|  q_j^\dagger \big)\\ 
   \end{aligned}
 \end{equation*}
 Using this result in the previously derived expression :
 
 \begin{equation*}\label{eq:resolution of identity}
   \begin{aligned}
-    \hat I=\sum_I \{ |y_I^\dagger)(y_I^\dagger|-|y_I)(y_I|\}\\
-    G(\omega)=(q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}q_j^\dagger) - (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}q_j^\dagger)\\
-    =(q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}|q_j^\dagger) - (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}|q_j^\dagger)
+    \hat I&=\sum_I \{ |y_I^\dagger)(y_I^\dagger|-|y_I)(y_I|\}\\
+    G(\omega)&=(q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}q_j^\dagger) - (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}q_j^\dagger)\\
+    &=(q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}|q_j^\dagger) - (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}|q_j^\dagger)
   \end{aligned}
 \end{equation*}
 Again using resolution of Identity Operator : 
 \begin{equation*}\label{eq:resolution of identity}
   \begin{aligned}
-    \hat I=\sum_I \{ |y_I)(y_I|-|y_I^\dagger)(y_I^\dagger|\}\\
-    G(\omega)=(q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}|y_J^\dagger)(y_J^\dagger|q_j^\dagger) - (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}|y_J^\dagger)(y_J^\dagger|q_j^\dagger)\\
- - (q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}|y_J)(y_J|q_j^\dagger) + (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}|y_J)(y_J|q_j^\dagger)
+    G(\omega)&=(q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}|y_J^\dagger)(y_J^\dagger|q_j^\dagger) - (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}|y_J^\dagger)(y_J^\dagger|q_j^\dagger)\\
+ &- (q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}|y_J)(y_J|q_j^\dagger) + (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}|y_J)(y_J|q_j^\dagger)
   \end{aligned}
 \end{equation*}
 
-\subsection{}
+\section{Resolution of Identity}
+\subsection{Finding Identity for the notations}
+
 
 
 
