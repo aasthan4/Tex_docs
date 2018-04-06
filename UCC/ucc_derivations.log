@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 APR 2018 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  6 APR 2018 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -163,6 +163,12 @@ LaTeX Warning: Label `eq:resolution of identity' multiply defined.
 
 LaTeX Warning: Label `eq:resolution of identity' multiply defined.
 
+
+LaTeX Warning: Label `eq:resolution of identity' multiply defined.
+
+
+LaTeX Warning: Label `eq:resolution of identity' multiply defined.
+
 )
 \openout1 = `ucc_derivations.aux'.
 
@@ -287,7 +293,7 @@ Overfull \hbox (41.941pt too wide) detected at line 82
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2] (./ucc_derivations.aux)
+[2] [3] (./ucc_derivations.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -295,7 +301,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  2870 strings out of 493014
  38894 string characters out of 6133351
- 117460 words of memory out of 5000000
+ 119462 words of memory out of 5000000
  6379 multiletter control sequences out of 15000+600000
  13345 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -311,10 +317,10 @@ cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
 l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/t
 exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on ucc_derivations.pdf (2 pages, 114687 bytes).
+Output written on ucc_derivations.pdf (3 pages, 117496 bytes).
 PDF statistics:
- 55 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 58 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

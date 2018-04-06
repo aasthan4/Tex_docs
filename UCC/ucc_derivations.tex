@@ -93,14 +93,39 @@ Again using resolution of Identity Operator :
 \begin{equation*}\label{eq:resolution of identity}
   \begin{aligned}
     G(\omega)&=(q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}|y_J^\dagger)(y_J^\dagger|q_j^\dagger) - (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}|y_J^\dagger)(y_J^\dagger|q_j^\dagger)\\
- &- (q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}|y_J)(y_J|q_j^\dagger) + (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}|y_J)(y_J|q_j^\dagger)
+ &- (q_I^\dagger|y_I^\dagger)(y_I^\dagger|(\omega \hat I - \hat H)^{-1}|y_J)(y_J|q_j^\dagger) + (q_I^\dagger|y_I)(y_I|(\omega \hat I - \hat H)^{-1}|y_J)(y_J|q_j^\dagger)\\
+    &=M L^{-1} M^\dagger
   \end{aligned}
 \end{equation*}
 
 \section{Resolution of Identity}
-\subsection{Finding Identity for the notations}
+  \subsection{Proof for the Identity for the notation}\
 
-
-
-
+    \begin{equation*}\label{eq:resolution of identity}
+      \begin{aligned}
+        (A|B)&=\sum_I (A|y_I^\dagger)(y_I^\dagger|B)-(A|y_I)(y_I|B)\\
+	\sum_I(A|y_I^\dagger)(y_I^\dagger|B)&=\sum_I \big[ \big \langle \Psi_{gr}|A^\dagger y_I^\dagger-y_I^\dagger A^\dagger|\Psi_{gr} \big \rangle +
+	\big \langle \Psi_{gr}| y_I B- B y_I |\Psi_{gr} \big \rangle \big]\\
+	&=\big \langle \Psi_{gr}| A^\dagger y_I^\dagger |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I B|\Psi_{gr} \big \rangle 
+	-\big \langle \Psi_{gr}| A^\dagger y_I^\dagger |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|iB y_I |\Psi_{gr} \big \rangle\\ 
+	&-\big \langle \Psi_{gr}| y_I^\dagger A^\dagger |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I B|\Psi_{gr} \big \rangle 
+	+\big \langle \Psi_{gr}|  y_I^\dagger A^\dagger|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|B y_I|\Psi_{gr} \big \rangle \\
+	&=\big \langle \Psi_{gr}| A^\dagger B|\Psi_{gr} \big \rangle  \\
+      \end{aligned}
+    \end{equation*}
+    Similarly using Vaccume Anhilation Conditions :
+    \begin{equation*}
+      \begin{aligned}
+	\sum_I (A|y_I)(y_I|B) &=-\big \langle \Psi_{gr}|B A^\dagger |\Psi_{gr} \big \rangle \\
+      \end{aligned}
+    \end{equation*}
+    Adding both terms, we prove our identity:
+    \begin{equation*}\label{eq:resolution of identity}
+      \begin{aligned}
+        (A|B)&=\sum_I (A|y_I^\dagger)(y_I^\dagger|B)-(A|y_I)(y_I|B)\\
+	&=\big \langle \Psi_{gr}| A^\dagger B|\Psi_{gr} \big \rangle -\big \langle \Psi_{gr}|B A^\dagger |\Psi_{gr} \big \rangle \\
+	&=\big \langle \Psi_{gr}|\big[A^\dagger,B\big] |\Psi_{gr} \big \rangle \\
+	&=(A|B)\\
+      \end{aligned}
+    \end{equation*}
 \end{document}  
