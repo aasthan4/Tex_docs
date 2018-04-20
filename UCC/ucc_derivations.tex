@@ -98,15 +98,14 @@ Again using resolution of Identity Operator :
 \end{equation*}
 
 \section{Resolution of Identity}
-  \subsection{Proof for the Identity for the notation}\
-
+  \subsection{Proof for the Identity for the notation}
     \begin{equation*}\label{eq:resolution of identity}
       \begin{aligned}
         (A|B)&=\sum_I (A|y_I^\dagger)(y_I^\dagger|B)-(A|y_I)(y_I|B)\\
-	\sum_I(A|y_I^\dagger)(y_I^\dagger|B)&=\sum_I \big[ \big \langle \Psi_{gr}|A^\dagger y_I^\dagger-y_I^\dagger A^\dagger|\Psi_{gr} \big \rangle +
+	\sum_I(A|y_I^\dagger)(y_I^\dagger|B)&=\sum_I \big[ \big \langle \Psi_{gr}|A^\dagger y_I^\dagger-y_I^\dagger A^\dagger|\Psi_{gr} \big \rangle 
 	\big \langle \Psi_{gr}| y_I B- B y_I |\Psi_{gr} \big \rangle \big]\\
 	&=\big \langle \Psi_{gr}| A^\dagger y_I^\dagger |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I B|\Psi_{gr} \big \rangle 
-	-\big \langle \Psi_{gr}| A^\dagger y_I^\dagger |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|iB y_I |\Psi_{gr} \big \rangle\\ 
+	-\big \langle \Psi_{gr}| A^\dagger y_I^\dagger |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|B y_I |\Psi_{gr} \big \rangle\\ 
 	&-\big \langle \Psi_{gr}| y_I^\dagger A^\dagger |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I B|\Psi_{gr} \big \rangle 
 	+\big \langle \Psi_{gr}|  y_I^\dagger A^\dagger|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|B y_I|\Psi_{gr} \big \rangle \\
 	&=\big \langle \Psi_{gr}| A^\dagger B|\Psi_{gr} \big \rangle  \\
@@ -115,9 +114,16 @@ Again using resolution of Identity Operator :
     Similarly using Vaccume Anhilation Conditions :
     \begin{equation*}
       \begin{aligned}
-	\sum_I (A|y_I)(y_I|B) &=-\big \langle \Psi_{gr}|B A^\dagger |\Psi_{gr} \big \rangle \\
+	\sum_I (A|y_I)(y_I|B)&=\sum_I \big[ \big \langle \Psi_{gr}|A^\dagger y_I-y_I A^\dagger|\Psi_{gr} \big \rangle 
+	\big \langle \Psi_{gr}| y_I^\dagger B- B y_I^\dagger |\Psi_{gr} \big \rangle \big]\\
+	&=\big \langle \Psi_{gr}| A^\dagger y_I |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I^\dagger B|\Psi_{gr} \big \rangle 
+	-\big \langle \Psi_{gr}| A^\dagger y_I |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|B y_I^\dagger |\Psi_{gr} \big \rangle\\ 
+	&-\big \langle \Psi_{gr}| y_I A^\dagger |\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I^\dagger B|\Psi_{gr} \big \rangle 
+	+\big \langle \Psi_{gr}|  y_I A^\dagger|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|B y_I^\dagger|\Psi_{gr} \big \rangle \\
+	&=-\big \langle \Psi_{gr}|B A^\dagger |\Psi_{gr} \big \rangle \\
       \end{aligned}
     \end{equation*}
+
     Adding both terms, we prove our identity:
     \begin{equation*}\label{eq:resolution of identity}
       \begin{aligned}
@@ -125,6 +131,39 @@ Again using resolution of Identity Operator :
 	&=\big \langle \Psi_{gr}| A^\dagger B|\Psi_{gr} \big \rangle -\big \langle \Psi_{gr}|B A^\dagger |\Psi_{gr} \big \rangle \\
 	&=\big \langle \Psi_{gr}|\big[A^\dagger,B\big] |\Psi_{gr} \big \rangle \\
 	&=(A|B)\\
+      \end{aligned}
+    \end{equation*}
+
+  \subsection{Resolution of Identity 2}
+    Placing I at the second place in our notation:\\
+    conditions : $\hat{O} \Psi_{gr} = E \Psi_{gr}$ ans using the Vaccume Anhilation conditions :\\
+    \begin{equation*}\label{eq:resolution of identity 2}
+      \begin{aligned}
+	(A|\hat{O}|B)&=(A|\hat{O}|y_I^\dagger)(y_I^\dagger|B)-(A|\hat{O}|y_I)(y_I|B)\\
+	(A|\hat{O}|y_I^\dagger)(y_I^\dagger|B)&=\{(A|O y_I^\dagger)-(A|y_I^\dagger O))\}(y_I^\dagger|B)\\
+			&= \big \langle \Psi_{gr}|\big[A^\dagger,O y_I^\dagger\big]-\big[A^\dagger, y_I^\dagger O \big]|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|\big[ y_I B\big]|\Psi_{gr} \big \rangle\\
+			&= \big \langle \Psi_{gr}|A^\dagger O y_I^\dagger|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I B|\Psi_{gr} \big \rangle 
+			- \big \langle \Psi_{gr}|O y_I^\dagger A^\dagger|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I B|\Psi_{gr} \big \rangle\\
+			&   - \big \langle \Psi_{gr}|A^\dagger y_I^\dagger O|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I B|\Psi_{gr} \big \rangle
+			+ \big \langle \Psi_{gr}| y_I^\dagger O A^\dagger|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|y_I B|\Psi_{gr} \big \rangle\\
+			&- \big \langle \Psi_{gr}|A^\dagger O y_I^\dagger|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|B y_I|\Psi_{gr} \big \rangle 
+			+ \big \langle \Psi_{gr}|O y_I^\dagger A^\dagger|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|B y_I|\Psi_{gr} \big \rangle\\
+			&+ \big \langle \Psi_{gr}|A^\dagger y_I^\dagger O|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|B y_I|\Psi_{gr} \big \rangle
+			- \big \langle \Psi_{gr}| y_I^\dagger O A^\dagger|\Psi_{gr} \big \rangle \big \langle \Psi_{gr}|B y_I|\Psi_{gr} \big \rangle\\
+			&=\big \langle \Psi_{gr}|A^\dagger O B|\Psi_{gr} \big \rangle - E \big \langle \Psi_{gr}|A^\dagger B|\Psi_{gr} \big \rangle
+      \end{aligned}
+    \end{equation*}
+    Similarly :
+    \begin{equation*}\label{2ndhalf}
+      \begin{aligned}
+	(A|\hat{O}|y_I)(y_I|B)&=-\big \langle \Psi_{gr}|B O A^\dagger|\Psi_{gr} \big \rangle + E \big \langle \Psi_{gr}|B A^\dagger |\Psi_{gr} \big \rangle
+      \end{aligned}
+    \end{equation*}
+    Adding both we get :
+    \begin{equation*}\label{not imp}
+      \begin{aligned}
+      (A|\hat{O}|B)=\big \langle \Psi_{gr}|A^\dagger O B|\Psi_{gr} \big \rangle - E \big \langle \Psi_{gr}|A^\dagger B|\Psi_{gr} \big \rangle\\
+	 + \big \langle \Psi_{gr}|B O A^\dagger |\Psi_{gr} \big \rangle - E \big \langle \Psi_{gr}|B A^\dagger |\Psi_{gr} \big \rangle
       \end{aligned}
     \end{equation*}
 \end{document}  
