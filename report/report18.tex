@@ -1,0 +1,53 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+%SetFonts
+
+%SetFonts
+
+
+\title{Annual Report 2018}
+\author{Ayush Asthana : Cheng Lab}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+
+\maketitle
+
+\section{Progress over the last year 2017-18}
+I finished my course requirements by the end of my 1st year in spring of 2017 completing 8 courses as required by the department. After which I have started my research in the development of methods for development of wavefunction based methods for highly accurate calculations of excited states. \\
+
+As we work in the development of theories on the line of and similar to coupled cluster theory in Quantum Chemistry, we make use of tools for derivation of energy and amplitude expressions. These are diagram based method for a Fynman type derivation or the use of Wicks Theorem. With increasing complexity, there is increased number of diagrams and thereby increased human time and error possibilities in the process. This demans an automatic generation tool that can handle derivation process of these theoretical methods to generate the working expressions needed to do matrix multiplications in professional softwares such as CFour and Gamess. This automation is much harder to achieve in a diagramatic method and more suitable through wicks theorem type derivation.\\
+Last year, we have been developing such a Python based tool to automatically generate the working expressions for our theories. The tool has been made general enough to handle a various spectra of theoretical methods including Coupled Cluster, Unitary Coupled Cluster based methods etc. It is designed to even handle Extended Wicks Theorem developed by Mukherjee [citation] which handles multireference problems starting with a multiconfiguration ground state. The generality of such a tool will enable us to develop much more sophisticated and accurate methods faster and with better accuracy. \\
+
+The present form of the code can handle the following tasks : \\
+1. Do wicks Theorem, spin free wicks theorem, extended wicks theorem and spin free extended wicks theorem type contraction and calculation of commutator of any two strings of creation and anhilation operators. \\
+2. Collect terms from the above contraction and compare them (add/subract) to form simple expressions and outtput operator expressions.\\
+3. Do Nested commutator calculations such as [[V,T1],T1].\\
+4. Select special types of operators such as H{a,i}, H{i,j} etc. These give the working amplitude,energy expressions of the method involved. \\
+
+We have been implementing the above tool successfully on Unitary Coupled Theory being developed in our group. We have derived the energy and amplidude terms of the UCCSD method in the paper currently under review :\\
+Paper\\
+
+UCC theory offers certain benefits over succesful Couple Cluster methods for energy calculaitons of ground and excited states. The Hamiltonian of a UCC method is hermitian which guarantees a real energy value. Traditional CC methods have been shown to have inconsistancies at potential energy surface crossings such as conical intersection problem due to non hermitian nature of Hcc. In the process of development of both the method and the tool, we are currently veryfying other parts of Hamiltonian through the software tool which are important in the excited states calculations.\\
+
+My interests involve many computational and theoretical areas. Last year I had also undertaken a course in Parallel programming from the department of Computer Science at JHU. Parallel Programming is a necessity in the cuurent age of Quantum Chemistry where the calculations make heavy use of supercomputers and multi-core machines many fold faster calculations. I worked with my advisor to make an implementation of the techneques I learnt in the course to the relativistic two-component Coupled Cluster Code at CFOUR program used heavily for highly accurate quantum chemical calculations. We used OpenMP tools to parallelise the program to be able to make use of the supercomputing facilities here at MARCC. Out implementation was very succesful provising ~15 times speedup for 24 core node present at MARCC. We published the work at : . My contribution here was in the development of parallelised computing structure for the code. \\
+
+Apart from this project, I have undertaken a summer school held at Virginia Tech in June 2017. This school aimed at theoretical studies of responce properties. This was a 4 day school involving excercises and lectures by experts in the area of responce properties. The school benefitted me very much to understand the problems currently in the community and the current state of theoretical and computational solutions offered. Also, it helped me to socialise in a community of peers involved in repearch in electronic structure theory and computational from all parts of the world.\\
+\section{Plans and requirements over the next year}
+I plan to give my department orals and GBO in the fall semester of 2018. Regarding that I have started preparations to give a story to my current and future research work and also to prepare for an overal undersanding of Chemical Theory and Computation research. \\
+
+I plan to restructure and rewrite my current code involving improved algorithms for better performance and universal definitions of object classes for more formal and professional development which is instrumental step in designing a software package. This will help any future collaborations and also in extending the code for more functions in the future. This task is expected to take part of my time till the end of the summers of 2018. \\
+
+We plan to implement our code in the development of UCC correct up to triple commutator and see the convergence of energy values. This will help us determine the accuracy of our method. The present tool can find a good application in deriving the expressions there as the amount of effort in the derivation through diagrams is high.\\
+
+I am involved in a computational project in collaboration with Bragg group in the calculation of polarisation anisotrpy for the molecule BPEA () for which the experiments have been succesfully carries out here in their group. This calculation involves accurate calculations and charecterisation of excited states through EOM-CCSD method for accurate description of the experimental anisotropy values. I wish to gain important understanding of experiemntal techneques and areas where developments in excited state calculations techneques can provide benefits in explaining and predicting exciting new science.\\
+\section{}
+\end{document}  
