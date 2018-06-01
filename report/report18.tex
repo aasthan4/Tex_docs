@@ -1,4 +1,4 @@
-\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\documentclass[11pt]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
 %\geometry{landscape}                		% Activate for rotated page geometry
@@ -7,47 +7,47 @@
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
 \usepackage{amsmath}
-
+\usepackage{indentfirst}
 %SetFonts
 
 %SetFonts
+\setlength{\parskip}{1em}
 
 
-\title{Annual Report 2018}
-\author{Ayush Asthana : Cheng Lab}
-%\date{}							% Activate to display a given date or no date
+
 
 \begin{document}
+\title{Annual Report 2018}
+\author{Ayush Asthana : Cheng Lab}
+\date{March 31 2018}							% Activate to display a given date or no date
 
 \maketitle
 
-\section{Progress over the last year 2017-18}
-I finished my course requirements by the end of my 1st year in spring of 2017 completing 8 courses as required by the department. After which I have started my research in the development of methods for development of wavefunction based methods for highly accurate calculations of excited states. \\
+\section{Progress over the last year 2017-18}%
+Quantum chemistry is successful in treating ground state and low lying excited states of molecules. Remaining scientific challenges in the field include treatment of relativistic effects and multireference character, and description of more general excited states. At the intersection of electronic states, standard coupled cluster methods produce inconsistencies due to the non-hermitian nature of transformed Hamiltonian ($\bar{H}$) in Coupled Cluster (CC). As a suitable alternation we are developing a unitary version of coupled cluster theory where the $\bar{H}$ is hermitian ensuring a real energy value.\\ 
 
-As we work in the development of theories on the line of and similar to coupled cluster theory in Quantum Chemistry, we make use of tools for derivation of energy and amplitude expressions. These are diagram based method for a Fynman type derivation or the use of Wicks Theorem. With increasing complexity, there is increased number of diagrams and thereby increased human time and error possibilities in the process. This demans an automatic generation tool that can handle derivation process of these theoretical methods to generate the working expressions needed to do matrix multiplications in professional softwares such as CFour and Gamess. This automation is much harder to achieve in a diagramatic method and more suitable through wicks theorem type derivation.\\
-Last year, we have been developing such a Python based tool to automatically generate the working expressions for our theories. The tool has been made general enough to handle a various spectra of theoretical methods including Coupled Cluster, Unitary Coupled Cluster based methods etc. It is designed to even handle Extended Wicks Theorem developed by Mukherjee [citation] which handles multireference problems starting with a multiconfiguration ground state. The generality of such a tool will enable us to develop much more sophisticated and accurate methods faster and with better accuracy. \\
+In the development of Unitary Coupled Cluster theory (UCC) a major bottle neck is the derivation of working expressions for the calculation of energy and wavefunction. These expressions are written in second quantised operators (creation and annihilation operators) and Wick's theorem is used for taking a product of strings of such operators. Diagrams derived from Wick's theorem are used to hand-derive the working equations for electronic structure methods. Due to the nature of $\bar{H}$ in UCC formalism, the number of diagrams for working equations become very large (of order of hundreds). Hand-deriving so many diagrams can be time-taking and error prone. This demands for an automatic expression generation tool that can handle the derivation process.\\
 
-The present form of the code can handle the following tasks : \\
-1. Do wicks Theorem, spin free wicks theorem, extended wicks theorem and spin free extended wicks theorem type contraction and calculation of commutator of any two strings of creation and anhilation operators. \\
-2. Collect terms from the above contraction and compare them (add/subract) to form simple expressions and outtput operator expressions.\\
-3. Do Nested commutator calculations such as [[V,T1],T1].\\
-4. Select special types of operators such as H{a,i}, H{i,j} etc. These give the working amplitude,energy expressions of the method involved. \\
+To carry out the derivation process through Wick's Theorem and generate the expressions automatically, I have been developing a python based program. The present form of the Automatic Expression Generator (AEG) code can handle the following tasks : \\
+1. Do Wick's Theorem type contraction and calculation of commutator of any two strings of creation and annihilation operators. \\
+2. Collect terms from the above contraction and compare them (add/subtract) to form simple expressions and output operator expressions.\\
+3. Do Nested commutator calculations such as $[[V,T1],T1]$.\\
+4. Select specific $\bar{H}$ terms such as $H_{a,i}, H_{i,j}$ etc.  \\
 
-We have been implementing the above tool successfully on Unitary Coupled Theory being developed in our group. We have derived the energy and amplidude terms of the UCCSD method in the paper currently under review :\\
-Paper\\
+I contributed to successfully verify the energy and amplitude terms of the UCC3 method through the AEG code and co-authored the following manuscript submitted for review - Unitary Coupled Cluster based self consistent polarisation propagator theory: A third order formulation and pilot applications - J. Liu, A. Asthana, L. Cheng and D. Mukherjee submitted to the Journal of Chemical Physics 2018\\
 
-UCC theory offers certain benefits over succesful Couple Cluster methods for energy calculaitons of ground and excited states. The Hamiltonian of a UCC method is hermitian which guarantees a real energy value. Traditional CC methods have been shown to have inconsistancies at potential energy surface crossings such as conical intersection problem due to non hermitian nature of Hcc. In the process of development of both the method and the tool, we are currently veryfying other parts of Hamiltonian through the software tool which are important in the excited states calculations.\\
+I undertook a course on parallel programming from Computer Science Department at JHU in my first year and learnt skills to parallelize algorithms and make use of supercomputing facilities. I contributed to make an OpenMP based implementation to parallelize a FORTRAN code of relativistic coupled cluster theory and co-authored the following paper published this year - Two-component relativistic coupled-cluster methods using mean-field spin-orbit integrals
+J. Liu, Y. Shen, A. Asthana, L. Cheng - The Journal of Chemical Physics, 148 (3), 034106 (2018)\\
 
-My interests involve many computational and theoretical areas. Last year I had also undertaken a course in Parallel programming from the department of Computer Science at JHU. Parallel Programming is a necessity in the cuurent age of Quantum Chemistry where the calculations make heavy use of supercomputers and multi-core machines many fold faster calculations. I worked with my advisor to make an implementation of the techneques I learnt in the course to the relativistic two-component Coupled Cluster Code at CFOUR program used heavily for highly accurate quantum chemical calculations. We used OpenMP tools to parallelise the program to be able to make use of the supercomputing facilities here at MARCC. Out implementation was very succesful provising ~15 times speedup for 24 core node present at MARCC. We published the work at : . My contribution here was in the development of parallelised computing structure for the code. \\
+Apart from these projects, I have participated in a summer school organised at Virginia Tech in June 2017. I learnt about quantum mechanical theories to study the response of molecules when probed by electromagnetic fields. This was a 4 day school tought by experts in the area of molecular response properties where I worked on problem sheets and participated in classroom discussions with peers and teachers.\\
 
-Apart from this project, I have undertaken a summer school held at Virginia Tech in June 2017. This school aimed at theoretical studies of responce properties. This was a 4 day school involving excercises and lectures by experts in the area of responce properties. The school benefitted me very much to understand the problems currently in the community and the current state of theoretical and computational solutions offered. Also, it helped me to socialise in a community of peers involved in repearch in electronic structure theory and computational from all parts of the world.\\
+I was involved in two TA duties this year. TA in 'Introduction to Computation Chemistry' in the Fall 2017 and Lab TA in 'Intro Chem' in the Spring Semester 2017-18.\\
 \section{Plans and requirements over the next year}
-I plan to give my department orals and GBO in the fall semester of 2018. Regarding that I have started preparations to give a story to my current and future research work and also to prepare for an overal undersanding of Chemical Theory and Computation research. \\
+Due to the presence of both excitation and de-excitation operators in UCC formalism, the Baker-Campell-Housdoff expansion form of $\bar{H}$ is non terminating. So the problem lies in finding a suitable truncation scheme for the $\bar{H}$. We have adopted an expansion scheme using Bernoulli numbers as expansion coefficients and separated the terms based on the degree of commutator with excitation operators. At present we have implemented second order commutators and would like to calculate the third order commutators as a next step to explore suitable truncation possibility. Third order commutators are expected to generate many hundreds of terms with added computational demands. 
 
-I plan to restructure and rewrite my current code involving improved algorithms for better performance and universal definitions of object classes for more formal and professional development which is instrumental step in designing a software package. This will help any future collaborations and also in extending the code for more functions in the future. This task is expected to take part of my time till the end of the summers of 2018. \\
+To meet the needs for higher order commutator in our expansion scheme of UCC, we need more optimised version of AEG program. I plan to redesign my current code to optimise  algorithms for better performance and implement universal definitions of object classes. This task is expected to take part of my time till the end of the fall semester of 2018. 
 
-We plan to implement our code in the development of UCC correct up to triple commutator and see the convergence of energy values. This will help us determine the accuracy of our method. The present tool can find a good application in deriving the expressions there as the amount of effort in the derivation through diagrams is high.\\
+I will also be working on a computational project in collaboration with Bragg group in the calculation of polarisation anisotropy for the molecule 9,10-Bis-(phenyl-ethynyl)anthracene (BPEA). The calculations involve accurate description and characterisation of excited states involved.
 
-I am involved in a computational project in collaboration with Bragg group in the calculation of polarisation anisotrpy for the molecule BPEA () for which the experiments have been succesfully carries out here in their group. This calculation involves accurate calculations and charecterisation of excited states through EOM-CCSD method for accurate description of the experimental anisotropy values. I wish to gain important understanding of experiemntal techneques and areas where developments in excited state calculations techneques can provide benefits in explaining and predicting exciting new science.\\
-\section{}
+I plan to give my department oral and GBO in the fall semester of 2018. Regarding that I have started preparations to give a story to my current and future research work and also to prepare for an overall understanding of Chemical Theory and Computation research. 
 \end{document}  
