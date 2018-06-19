@@ -26,22 +26,36 @@
 \section{Restricted Hartree Fock Solution}
 	%define basis and form MOs
 	For minimum basis $H_2$ we have two 2s orbitals, one on each H atom as our basis.
-	i.e \phi_A and \psi_B as atomic orbitals on hydrogen atom A and B. Let $\bar{\phi_A}$ and $\bar{\phi_B}$
-	denote the \beta spin. \\
-	Restricted Hartree Fock orbitals will be determined by taking a linear combination of atomic orbitals and minimising the energy through those orbitals. 
-
+	i.e $\phi_A$ and $\psi_B$ as atomic orbitals on hydrogen atom A and B. Let $\bar{\phi_A}$ and $\bar{\phi_B}$
+	denote the $\beta$ spin. \\
+	Restricted Hartree Fock orbitals will be determined by pure symmetry considerations.\\ 
 	$\phi_{\sigma}=\frac{1}{\sqrt{1+S_{12}}}(\phi_A+\phi_B)$\\	
 	$\phi_{\sigma}=\frac{1}{\sqrt{1+S_{12}}}(\phi_A+\phi_B)$\\
-	The determinant then becomes \\
-
-	$|phi_{\sigma}\bar{\phi_{sigma}}>=\frac{1}{sqrt{2}}matrix$
-	$|phi_{\sigma}\bar{\phi_{sigma}}>=\frac{1}{sqrt{2}}matrix$
-		
-	%solve the HF equation to get the energy of the present system
-	%discuss what the energy should be and prove that J is not zero
+	The determinant then is\\
+	$|\phi_{\sigma}\bar{\phi}_{\sigma}>=\frac{1}{\sqrt{2}}matrix$\\
+	$|\phi_{\sigma}\bar{\phi}_{\sigma}>=\frac{1}{\sqrt{2}}matrix$\\
+	The energy of this determinant based on applying the Fock operator will be $2h_{\sigma \sigma} + J_{\sigma \sigma}$
+	where h is the core 1 electron part and J is the columbing 2 electron integral. Let us evaluate the energy based on atomic orbitals.\\
+	determinant ->
+	To correctly describe the dissociation limit, energy of dissoiated $H_2$ molecule should go to two times energy of $H$ atom. The energy calculated by RHF is an overestimation by $J_{\sigma \sigma}$. 
+	$J_{\sigma \sigma}$ should go to zero for correct description which it doesnt as shown below. \\
+	$J_{\sigma \sigma}=$\\
+	
 	\subsection{Discussion of results}
 	%discuss the source of the problem
+	If we look at equation x carefully we find that there are four determinants contributing to the molecular configuration, two of which are ionic in nature (1 and 4th). 
+	These determinants do not contribute to the correct dissociated $H_2$ atoms as the atomic orbitals are spacially separated. RHF molecular orbitals are unable to include this spacial separation as they 
+	include same spacial $\Psi$ for both spin $\alpha$ and $\beta$. Thus we need additional degree of fredom in our orbital wavefunction to include different spacial wavefunctions for spin states. An Unrestricted 
+	Hartree Fock (UHF) can solve this problem discussed in the next section. \\
 \section{Unrestricted Hartree Fock Solution}
+	Restricted set of orbitals were generated purely by symmetry. Unrestricted orbitals are generated through adding additional degree of freedom to make sure the spacial part of the orbitals wavefunction 
+	can be relaxed. A formulation for $H_2$ minimal basis case is described below. \\
+	We know that in the dissociated state $H_2$ minimal basis configuration will be $|\phi_A \bar{\phi}_B>$ where \phi_a and \phi_B are atomic orbitals of $H$ atoms. We can thus relax our RHF orbitals in such a way that they 
+	finally form the above configuration at the dissociation limit. \\
+	equation for parameter addition \\
+	explaination for $\theta =0$ and 45 case. \\
+	Let us consider the dissociated case of $H_2$ molecule and calculate its energy and wavefunction associated with it. \\
+	
 	\subsection{Discussion}
 \section{Two Orbital two electron system}%
 	\subsection{Spin Operator}
