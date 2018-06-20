@@ -30,7 +30,7 @@
 	denote the $\beta$ spin. \\
 	Restricted Hartree Fock orbitals will be determined by pure symmetry considerations.\\ 
 	$\phi_{\sigma}=\frac{1}{\sqrt{1+S_{12}}}(\phi_A+\phi_B)$\\	
-	$\phi_{\sigma}=\frac{1}{\sqrt{1+S_{12}}}(\phi_A+\phi_B)$\\
+	$\phi_{\sigma}^*=\frac{1}{\sqrt{1+S_{12}}}(\phi_A+\phi_B)$\\
 	The determinant then is\\
 	$|\phi_{\sigma}\bar{\phi}_{\sigma}>=\frac{1}{\sqrt{2}}matrix$\\
 	$|\phi_{\sigma}\bar{\phi}_{\sigma}>=\frac{1}{\sqrt{2}}matrix$\\
@@ -59,8 +59,59 @@
 	\subsection{Discussion}
 \section{Two Orbital two electron system}%
 	\subsection{Spin Operator}
+	Spin Operator is a vector quantity defined as follows :
+	$\vv{s}=s_x \vv{i}+s_y\vv{j} + s_z\vv{k}$\\
+	The x, y and z components are defined as observed experimentally through the Glen Fredlich experiment. 
+	$s_x=$\\
+	$s_y=$\\
+	$s_z=$\\
+	A more convenient notation used is to define ladder operators
+	$s_+=s_x+is_y$\\
+	$s_-=s_x-is_y$\\
+	The action of these ladder operators can be seen as taking the spin state up the ladder through $s_+$ and down the ladder through $s_-$.\\
+	The x,y and z components of the spin operator do not commute with each other.\\
+	$\[s_x,s_y\]=i\h$
+	$\[s_x,s_y\]=i\h$
+	$\[s_x,s_y\]=i\h$
+	The action of these operators can be seen on spin states defined by $\alpha$ or (1,0) in matrix notation  and $\beta$ or (0,1).	
+	Their operators can also be defined through Pauli matrices.
+	$s_x=\matrix{}{}$
+	$s_x=\matrix{}{}$
+	$s_x=\matrix{}{}$
+	$s_+$
+	$s_-$
+	The action of these matrices on the vector form of spin state gives the resulting spin state vector. Such as :
+	$s_x |\alpha>=()()=$
+	Through the above action we can come up with the following relations. 
+	$s_+|\alpha>=0  s_-|\alpha>=|\beta>$
+	$s_+|\beta>=|\alpha>  s_-|\beta>=0$
+	The above definitions are valid for atomic orbitals. The following set of derivations  can be made for molecular orbitals. 
+	S
+	
+	Since $S^2$ commutes with $H$, exact molecular orbitals are also eigenfunctions of $S^2$ operators and called pure spin states. Since we use an approximate solution
+	to wave function, our wavefunction $\Psi$ can be at times not a pure spin state. In such cases we can make the wavefunction pure spin states by taking a linear combination
+	of wavefunctions produced. 
 	\subsection{Spin Adapted Configurations}
+	Let us consider the example of $H_2$ to illustrate spin adapted configurations. The ground state of $H_2$ will have $\alpha$ and $\beta$ electrons in its lowest energy 
+	molecular orbital. 
 \section{Configurational Interaction Solution}
+	One way to look at our RHF solution of $H_2$ dissociation is to follow the two molecular orbitals produced $\phi_{\sigma}$ and $\phi_{sigma^*}$. 
+	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration $|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and write the energy in terms of atomic orbitals, \\
+	$2h_{\sigma} +J_{\sigma \sigma}=h_AA+h_AB+h_BA+h_BB+J_AA+J_BB$\\
+	$2h_{\sigma} +J_{\sigma \sigma}=h_AA-h_AB-h_BA+h_BB_J_AA+J_BB$\\
+	At the equilibrium distance, |\phi_{\sigma}> is clearly lower in energy but at the dissociation limit, $lim_{r->\inf} h_AB=h_BA=0$. Thus the two states
+	become degenerate. HF only calculating the energy of one of these states i.e $\phi_{\sigma}$. The energy is even minimised by what is known as the non-
+	dynamic correlation. One method to deal with this psudo degeneracy is by taking a linear combination of the two states and using Configuration Interaction 
+	to solve at the dissociated state. \\
+	$|\Phi>=c1 |\phi_{\sigma}\bar{\phi}_{\sigma}>+c2|\phi_{\sigma^*}\bar{\phi}_{\sigma^*}>$\\
+	\matrix{}{}{} equation\\
+	where the Hamiltonian coupling terms are :
+	$H12$ all \\
+	$E=c1H1$
+	We have an energy equation constrained by the normalisation equation $<\Phi|\Phi>=1$ which gives us $c1^2+c2^2=1$.
+	To solve for the minimum in energy based on the above constraint, we form the Lagrange function and find the minimum. 
+	$L=$
+	The above equation gives us 4 equations.
 	\subsection{Discussion}
 	\subsection{Secular Equations and its solution}
 \end{document}  
