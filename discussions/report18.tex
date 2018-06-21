@@ -25,39 +25,108 @@
 	%write at the end
 \section{Restricted Hartree Fock Solution}
 	%define basis and form MOs
-	For minimum basis $H_2$ we have two 2s orbitals, one on each H atom as our basis.
-	i.e $\phi_A$ and $\psi_B$ as atomic orbitals on hydrogen atom A and B. Let $\bar{\phi_A}$ and $\bar{\phi_B}$
-	denote the $\beta$ spin. \\
-	Restricted Hartree Fock orbitals will be determined by pure symmetry considerations.\\ 
+	A simple qualitative description of dissociation process can be made by minimal basis $H_2$ model using 1S orbitals on each H atom as our stomic basis.
+	i.e $\phi_A$ and $\psi_B$ as atomic orbitals on hydrogen atom A and B. Let us write $\alpha$ and $\beta$ spin as $\phi$ and $\bar{\phi}$ respectively. \\
+	Restricted Hartree Fock orbitals, determined by pure symmetry considerations are :\\ 
 	$\phi_{\sigma}=\frac{1}{\sqrt{1+S_{12}}}(\phi_A+\phi_B)$\\	
 	$\phi_{\sigma}^*=\frac{1}{\sqrt{1+S_{12}}}(\phi_A+\phi_B)$\\
 	The determinant then is\\
 	$|\phi_{\sigma}\bar{\phi}_{\sigma}>=\frac{1}{\sqrt{2}}matrix$\\
 	$|\phi_{\sigma}\bar{\phi}_{\sigma}>=\frac{1}{\sqrt{2}}matrix$\\
-	The energy of this determinant based on applying the Fock operator will be $2h_{\sigma \sigma} + J_{\sigma \sigma}$
-	where h is the core 1 electron part and J is the columbing 2 electron integral. Let us evaluate the energy based on atomic orbitals.\\
-	determinant ->
-	To correctly describe the dissociation limit, energy of dissoiated $H_2$ molecule should go to two times energy of $H$ atom. The energy calculated by RHF is an overestimation by $J_{\sigma \sigma}$. 
-	$J_{\sigma \sigma}$ should go to zero for correct description which it doesnt as shown below. \\
-	$J_{\sigma \sigma}=$\\
-	
+	The energy of this determinant based on applying the Fock operator will be $2h_{\sigma \sigma} + J_{\sigma \sigma}$ (one columbic interaction 
+	and no exchange possible between electrons of opposite spin) where h is the core 1 electron energy (kinetic and nuclear potential energy)
+	and J is the columbing 2 electron integral. Let us write our ground state determinant in terms of atomi orbitals.\\
+	\begin{equation}
+	\begin{split}
+		|\phi_{\sigma}\bar{\phi}_{\sigma}> &=\frac{1}{\sqrt{1+S_{12}}}|(\phi_A+\phi_B)(\bar(\phi)_A+\bar{\phi}_B)>\\
+					  &=\frac{1}{\sqrt{1+S_{12}}}(|\phi_A \phi_A>+|\phi_A \phi_B>+|\phi_B \phi_A+|\phi_B \phi_B>)\\
+	\end{split}
+	\end{equation}
+	Note that two out of four configurations of RHF ground state determinant are show ionic bond character. These determinants are the reason of
+	problamatic behavious as we shall see later. \\
+	\begin{equation}
+	derive energy based on spaial orbitals and then atomic orbitals. 
+	\end{equation}
+	At the dissociation limit, $H_2$ molecule will be represented as two $H$ atoms at infinite distace so they do not interact with each other. 
+	Thus in a correct description of dissociation limit, energy of dissoiated $H_2$ molecule should go to two times energy of $H$ atom i.e 
+	$2 h_A$. The energy calculated by RHF is an overestimation by $J_{\sigma \sigma}$. 
+	Unfortunately, $J_{\sigma \sigma}$ does not go to zero as shown below. \\
+	\begin{equation}
+	\begin{split}
+		J_{\sigma \sigma} &=\int_r \phi_{\sigma}^*(1) \phi_{\sigma}(1)r_{12}\phi_{\sigma}^*(2) \phi_{\sigma}(2)\\
+			&=\int_r \phi_A^*(1) \phi_A(1)r_{12}\phi_A^*(2) \phi_A(2)+\int_r \phi_B^*(1) \phi_B(1)r_{12}\phi_B^*(2) \phi_B(2)\\
+			&\neq 0
+	\end{split}
+	\end{equation}
 	\subsection{Discussion of results}
 	%discuss the source of the problem
 	If we look at equation x carefully we find that there are four determinants contributing to the molecular configuration, two of which are ionic in nature (1 and 4th). 
-	These determinants do not contribute to the correct dissociated $H_2$ atoms as the atomic orbitals are spacially separated. RHF molecular orbitals are unable to include this spacial separation as they 
-	include same spacial $\Psi$ for both spin $\alpha$ and $\beta$. Thus we need additional degree of fredom in our orbital wavefunction to include different spacial wavefunctions for spin states. An Unrestricted 
-	Hartree Fock (UHF) can solve this problem discussed in the next section. \\
+	These determinants do not contribute to the correct dissociated $H_2$ atoms as the atomic orbitals are spacially separated and ionic type dissociation cannot occur. 
+	RHF molecular orbitals are unable to dissociate a molecule as they have same spacial $\Psi$ for both spin $\alpha$ and $\beta$. Thus we need additional degree of fredom in our orbital wavefunction to include different spacial wavefunctions for spin states. An Unrestricted 
+	Hartree Fock (UHF) can solve this problem. \\
 \section{Unrestricted Hartree Fock Solution}
-	Restricted set of orbitals were generated purely by symmetry. Unrestricted orbitals are generated through adding additional degree of freedom to make sure the spacial part of the orbitals wavefunction 
-	can be relaxed. A formulation for $H_2$ minimal basis case is described below. \\
-	We know that in the dissociated state $H_2$ minimal basis configuration will be $|\phi_A \bar{\phi}_B>$ where \phi_a and \phi_B are atomic orbitals of $H$ atoms. We can thus relax our RHF orbitals in such a way that they 
-	finally form the above configuration at the dissociation limit. \\
-	equation for parameter addition \\
-	explaination for $\theta =0$ and 45 case. \\
-	Let us consider the dissociated case of $H_2$ molecule and calculate its energy and wavefunction associated with it. \\
-	
+	Restricted set of orbitals were generated purely by symmetry. Unrestricted molecualar orbitals have different 
+	spacial functions for $\alpha$ and $\beta$ spin of the same orbital. A formulation to inorporate additional degree of freedom in symmetry 
+	determined RHF molecular orbitals is to form UHF orbitals as a linear combination of RHF orbitals. \\
+	%We know that in the dissociated state $H_2$ minimal basis configuration will be $|\phi_A \bar{\phi}_B>$ where $\phi_a$ and $\phi_B$ are atomic orbitals of $H$ atoms. We can thus relax our RHF orbitals in such a way that they 
+	%finally form the above configuration at the dissociation limit. \\
+	%equation for parameter addition \\
+	\begin{equation}
+
+		\phi_{\sigma}^{\alpha}=cos\theta \phi_{\sigma}+sin\theta \phi_{\sigma^*}\\
+		\phi_{\sigma}^{\beta}=cos\theta \phi_{\sigma}-sin\theta \phi_{\sigma^*}\\
+	\end{equation}
+	\begin{equation}
+		\phi_{\sigma^*}^{\alpha}=cos\theta \phi_{\sigma^*}+sin\theta \phi_{\sigma}\\
+		\phi_{\sigma^*}^{\beta}=cos\theta \phi_{\sigma^*}-sin\theta \phi_{\sigma}\\
+	\end{equation}
+	The added degree of freedome here is in $\theta$ which can be varied from 0 to $45^o$. For our perposes it is sufficient to consider the 
+	values at the 0 and $45^o$. At $0^o$ :\\
+
+	\begin{equation}
+	\begin{split}
+		\phi_{\sigma}^{\alpha}&=\phi_{\sigma}
+		\phi_{\sigma}^{\beta}&=\phi_{\sigma}
+		\phi_{\sigma^*}^{\alpha}&=\phi_{\sigma^*}
+		\phi_{\sigma^*}^{\beta}&=\phi{\sigma^*}
+	\end{split}
+	\end{equation}
+	These are RHF orbitals as discussed in the above section. At $\theta=45^o$ we have :\\
+	\begin{equation}
+	\begin{split}
+		\phi_{\sigma}^{\alpha}&=\frac{1}{\sqrt{2}}(\phi_{\sigma}+\phi_{\sigma^*})
+		\phi_{\sigma}^{\beta}&=\frac{1}{\sqrt{2}}(\phi_{\sigma}-\phi_{\sigma^*})
+		\phi_{\sigma*}^{\alpha}&=\frac{1}{\sqrt{2}}(\phi_{\sigma^*}+\phi_{\sigma})
+		\phi_{\sigma*}^{\beta}&=\frac{1}{\sqrt{2}}(\phi_{\sigma^*}-\phi_{\sigma})
+	\end{split}
+	\end{equation}
+	In $\theta=45^o$ case, taking the dissociation limit case $\phi_{\sigma}^{\alpha}\neq \phi_{\sigma}^{\beta}$ and more specifially
+	$\phi_{\sigma}^{\alpha}=\phi_A$ and $\phi_{\sigma}^{\beta}=\phi_B$. Thus the determinant $|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}>
+	=|\phi_A\bar{\phi}_B>$. These are the UHF orbitals.\\ 
+	Considering the dissociated case of $H_2$ molecule, now we calculate the energy of the ground state determinant at the dissociation limit. \\
+	\begin{equation}
+		\begin{split}
+			lim_{r->\inf}<\Phi_o|H|\Phi_o>&=<\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\alpha}|H|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\alpha}>\\
+				&=<\phi_A\phi_B|H|\phi_A\phi_B>\\
+				&=\frac{1}{2}(h_AA+h_BB)\\
+		\end{split}
+	\end{equation}
+	As shown here unlike RHF, UHF orbitals show correct behaviour of energy at the dissociation limit of $H_2$ molecule.\\
 	\subsection{Discussion}
-\section{Two Orbital two electron system}%
+	We see that the energy by UHF wavefunction $lim_{r->\inf}|\Phi_o>=|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}>$ goes to
+	correct limit but the wavefunction does not, as discussed in the following sections. \\
+	\section{Two Orbital two electron system}
+	In order to understand what the correct behavior of the wavefunction at the dissociation limit be, let us consider a two electron in two 
+	orbital $\phi_1 \phi_2$ case, just like our $H_2$ system. Two electrons can be arranged in two orbitals in the following 6 ways. \\
+	\begin{equation}
+		|\phi_1\bar{\phi}_1>, |\phi_2\bar{\phi}_2>, |\phi_1\bar{\phi}_2>, |\phi_2\bar{\phi}_1>, |\phi_1\phi_2>, |\phi_2\phi_1>\\ 
+	\end{equation}
+	In the above determinants, 3rd and 4th determinant are not pure spin state. \\
+	$$S^2|\phi_1\bar{phi}_2>=complete$$
+	By taking a linear combination of 3rd and 4th terms, we get :\\
+	\begin{equation}
+		
+	\end{equation}
 	\subsection{Spin Operator}
 	Spin Operator is a vector quantity defined as follows :
 	$\vv{s}=s_x \vv{i}+s_y\vv{j} + s_z\vv{k}$\\
