@@ -294,16 +294,30 @@
 	\end{split}
 	\end{equation}
 \section{Configurational Interaction Solution}
+	Let us apply configuration Internaction method to treat the $H_2$ dissociation problem. The ground state 
+	$|\prescript{1}{}{\Psi_1}>&=|\phi_A\bar{\phi}_{\sigma}>$ is a singlet, so we will include the three singlet configurations 
+	described in the above section in our CI wavefunction.\\
+	\begin{equation}
+	\begin{split}
+		|\Phi_o>=|\prescript{1}{}{\phi_1}>+c1|\prescript{1}{}{\phi_2}>+c2|\prescript{1}{}{\phi_3}>
+	\end{split}
+	\end{equation}
+	As a next step, we can simplify our $\Phi_o$ by taking symmetry into consideration. Both \Phi_o and the doubly excited determinant are gerade and 
+	will mix while $\prescript{1}{}{\Phi_3}$ is ungerade and thus will not. So we can simplify our $\Phi_{CI}$ as :\\
+	\begin{equation}
+		|\Phi_o>=|\prescript{1}{}{\phi_1}>+c1|\prescript{1}{}{\phi_2}>
+	\end{equation}
 	One way to look at our RHF solution of $H_2$ dissociation is to follow the two molecular orbitals produced $\phi_{\sigma}$ and $\phi_{sigma^*}$. 
-	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration $|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and write the energy in terms of atomic orbitals, \\
+	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration 
+	$|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and 
+	write the energy in terms of atomic orbitals, \\
 	\begin{equation}
 	2h_{\sigma} +J_{\sigma \sigma}=h_{AA}+h_{AB}+h_{BA}+h_{BB}+J_{AA}+J_{BB}\\
 	2h_{\sigma} +J_{\sigma \sigma}=h_{AA}-h_{AB}-h_{BA}+h_{BB}-J_{AA}+J_{BB}\\
 	\end{equation}
 	At the equilibrium distance, $|\phi_{\sigma}>$ is clearly lower in energy but at the dissociation limit, $lim_{r\rightarrow\infty} h_AB=h_BA=0$. Thus the two states
-	become degenerate. HF only calculating the energy of one of these states i.e $\phi_{\sigma}$. The energy is even minimised by what is known as the non-
-	dynamic correlation. One method to deal with this psudo degeneracy is by taking a linear combination of the two states and using Configuration Interaction 
-	to solve at the dissociated state. \\
+	become degenerate. In HF one is calculating the energy of one of these states i.e $\phi_{\sigma}$. The energy is even minimised by what is known as the non-
+	dynamic correlation. Thus taking a Configuration Interaction with both the states in $\Phi_{CI}$ gives the correct energy.\\
 	$|\Phi>=c1 |\phi_{\sigma}\bar{\phi}_{\sigma}>+c2|\phi_{\sigma^*}\bar{\phi}_{\sigma^*}>$\\
 	matrix equation\\
 	where the Hamiltonian coupling terms are :
