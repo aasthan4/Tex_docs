@@ -7,6 +7,7 @@
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{indentfirst}
 %SetFonts
 
@@ -154,67 +155,144 @@
 	limit of $H_2$ molecule.\\
 	\subsection{Discussion}
 	We see that the energy by UHF wavefunction $lim_{r\rightarrow\infty}|\Phi_o>=|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}>$ goes to
-	correct limit but the wavefunction is incorrect, as discussed in the following sections. \\
-\section{Two Orbital two electron system}
-	In order to understand what the correct behavior of the wavefunction at the dissociation limit be, let us consider a two electron in two 
-	orbital $\phi_1 \phi_2$ case, just like our $H_2$ system. Two electrons can be arranged in two orbitals in the following 6 determinants: \\
+	correct limit but the wavefunction is incorrect. The UHF wavefunction at the dissociation limit
+	 becomes $|\phi_A\bar{\phi}_B>$. But this is not a pure spin state in the case where electrons occupy
+	 different spacial orbitals, as will be discussed in the 
+	later sections. The correct wavefunction is :\\
 	\begin{equation}
-		|\phi_1\bar{\phi}_1>, |\phi_2\bar{\phi}_2>, |\phi_1\bar{\phi}_2>, |\bar{\phi}_1\phi_2>, |\phi_1\phi_2>, |\phi_2\phi_1>\\ 
+	\begin{split}
+		Lim_{r\rightarrow\infty}|\Psi_o>=\frac{1}{\sqrt{2}}(|\phi_A\bar{\phi}_B>+|\bar{\phi}_A\phi_B>)
+	\end{split}
 	\end{equation}
-	In the above cases, 3rd and 4th determinant are not pure spin states. \\
-	$$S^2|\phi_1\bar{\phi}_2>=$$
-	By taking a linear combination of 3rd and 4th terms, we get :\\
-	\begin{equation}
-		|\Phi^1>=\frac{1}{\sqrt{2}}(|\phi_1\bar{\phi}_2>-|\phi_1\bar{\phi}_2>)\\	
-		|\Phi^3>=\frac{1}{\sqrt{2}}(|\phi_1\bar{\phi}_2>+|\phi_1\bar{\phi}_2>)\\
-	\end{equation}
-	Thus by taking linear combinations of the above states we can form pure spin states.\\
-	ground state of an N electron system. But as we shall discuss in the next section, the correct solution to $H_2$ dissociation at the dossociation limit is not a single determinant. \\
+
 \subsection{Spin Operator}
 	Spin Operator is a vector quantity defined as follows :
-	$\vec{s}=s_x \vec{i}+s_y\vec{j} + s_z\vec{k}$\\
-	The x, y and z components are defined as observed experimentally through the Glen Fredlich experiment. 
-	$s_x=$\\
-	$s_y=$\\
-	$s_z=$\\
-	A more convenient notation used is to define ladder operators
-	$s_+=s_x+is_y$\\
-	$s_-=s_x-is_y$\\
-	The action of these ladder operators can be seen as taking the spin state up the ladder through $s_+$ and down the ladder through $s_-$.\\
-	The x,y and z components of the spin operator do not commute with each other.\\
 	\begin{equation}
-		\big[s_x,s_y\big]=i\\
-		\big[s_x,s_y\big]=i\\
-		\big[s_x,s_y\big]=i\\
+		\vec{s}=s_x \vec{i}+s_y\vec{j} + s_z\vec{k}\\
 	\end{equation}
-	The action of these operators can be seen on spin states defined by $\alpha$ or (1,0) in matrix notation  and $\beta$ or (0,1).	
-	Their operators can also be defined through Pauli matrices.
+	These spin operator components do not commute with each other and satisfy the following relations :
 	\begin{equation}
-	s_x=\left \{
-	  \begin{tabular}{ccc}
-	  1 & 5 & 8 \\
-	  0 & 2 & 4 \\
-	  3 & 3 & -8 
-	  \end{tabular}
-	\right \}
-	%$s_x=\matrix{}{}$
-	%$s_x=\matrix{}{}$
-	s_+
-	s_-
+	\begin{split}
+		[s_x,s_y]=is_z,   
+		[s_y,s_z]=is_x,   
+		[s_z,s_x]=is_y
+	\end{split}
 	\end{equation}
-	The action of these matrices on the vector form of spin state gives the resulting spin state vector. Such as :
-	$s_x |\alpha>=()()=$
-	Through the above action we can come up with the following relations. 
-	$s_+|\alpha>=0  s_-|\alpha>=|\beta>$
-	$s_+|\beta>=|\alpha>  s_-|\beta>=0$
-	The above definitions are valid for atomic orbitals. The following set of derivations  can be made for molecular orbitals. 
-	S	
-	Since $S^2$ commutes with $H$, exact molecular orbitals are also eigenfunctions of $S^2$ operators and called pure spin states. Since we use an approximate solution
-	to wave function, our wavefunction $\Psi$ can be at times not a pure spin state. In such cases we can make the wavefunction pure spin states by taking a linear combination
-	of wavefunctions produced. 
-	\subsection{Spin Adapted Configurations}
-	Let us consider the example of $H_2$ to illustrate spin adapted configurations. The ground state of $H_2$ will have $\alpha$ and $\beta$ electrons in its lowest energy 
-	molecular orbital. 
+	We can derive a set of states of the spin of a particle as eigenfunctions of $s^2$ or one of the components of $\vec{s}$ conventionally taken to be $s_z$. \\
+	\begin{equation}
+	\begin{split}	
+		s^2|\phi>&=s(s+1)|\phi>\\
+		s_z|\phi>&=m_s|\phi>
+	\end{split}
+	\end{equation}
+	Where $s$ is the total spin of the particle and $m_s$ is the quantum number for the z conponent. 
+	Since electron is a spin half system, where $m_s=\frac{1}{2} , -\frac{1}{2}$. 
+	For our convinience, we can define the two states in the matrix representation as follows :\\
+	\begin{equation}
+		|\alpha>=\Big(\begin{matrix} 1\\ 0\end{matrix}\Big), 
+		|\beta>=\Big(\begin{matrix} 0\\ 1\end{matrix}\Big)\\
+	\end{equation}
+	This leads us to a more convinient defition of ladder operators:
+	\begin{equation}
+	\begin{split}
+	s_+=\bigg(\begin{matrix} 0 & 1\\ 0 & 0\end{matrix}\bigg)\\
+	s_-=\bigg(\begin{matrix} 0 & 0\\ 1 & 0\end{matrix}\bigg)\\
+	\end{split}
+	\end{equation}
+	where the action of these ladder operators can be seen as taking the spin state up 
+	like 'step up' through $s_+$ and down like 'step down' through $s_-$. They are 
+	defined in terms for x and y components of $\vec{s}$ as follows :
+	\begin{equation}
+	\begin{split}
+		s_+&=s_x+is_y\\
+		s_-&=s_x-is_y\\
+	\end{split}
+	\end{equation}
+	Using eq(18), (20) and (21) we can write the x, y and z components of our spin operator in the matrix 
+	representation as $s_k=\frac{1}{2} \sigma_k$. Here k=x, y and z and $\sigma_k$ is defined as follows:\\
+	\begin{equation}
+		\begin{split}
+		\sigma_1=\bigg(\begin{matrix}0 & 1\\ 1 & 0\end{matrix}\bigg),
+		\sigma_2=\bigg(\begin{matrix}0 & -i\\ i & 0\end{matrix}\bigg), 
+		\sigma_3=\bigg(\begin{matrix}1 & 0\\ 0 & -1\end{matrix}\bigg)\\ 
+		\end{split}
+	\end{equation}
+	where 1, 2 and 3 refer to x, y and z components. This matrix formalism for spin $\frac{1}{2}$ systems 
+	was introduced by W. Pauli in 1926. We can also derive an expression for $s^2$ in terms of components
+	of $\vec{s}$ using eq(15) and (16) :\\
+	\begin{equation}
+	\begin{split}
+		s^2=s_+s_--s_z+s_z^2\\
+		s^2=s_-s_++s_z+s_z^2\\
+	\end{split}
+	\end{equation}
+	For manyelectron systems, the total spin sngular momentum is the sum of spin vectors for each 
+	electron.\\
+	\begin{equation}
+	\begin{split}
+		\vec{S}=\sum_{i=1}^N \vec{s}\big(i\big)\\
+	\end{split}
+	\end{equation}	
+	Thus the total squared spin operators is :\\
+	\begin{equation}
+	\begin{split}
+		S^2 &=\vec{S} .\vec{S}=\sum_{i=1}^N \sum_{j=1}^N \vec{s}\big(i\big)\vec{s}\big(j\big)\\
+			&=S_+S_--S_z+S_z^2\\
+			&=S_-S_++S_z+S_z^2
+	\end{split}
+	\end{equation}
+	Since there is no spin part in our non-relativistic $H$, $S^2$ and $S_z$ commutes with $H$ 
+	i.e $[H,S^2]=0$	and $[H,S_z]=0$. Thus the exact eigenfunctions of Hamiltonian (exact wavefunctios) 
+	are also eigenfunctions of $S^2$ and $S_z$ operators.\\ 
+	Approximate solutions of $H$ are not necessarily pure spin states. However we would like to convert
+	them to spin adapted configurations to form eigenfunctions of $S^2$. We will describe the process 
+	through an example in the following sections. \\
+	
+
+	\subsection{Two Orbital two electron system}
+	To understand spin adapted configurations and the correct behavior of the wavefunction at 
+	the dissociation limit be, let us consider an example of a simple case of two electrons in two 
+	orbital $\phi_1 \phi_2$ case as in our minimal basis $H_2$. Two electrons can be arranged 
+	in two orbitals in the following 6 ways: \\
+	\begin{equation}
+		|\phi_1\bar{\phi}_1>, |\phi_2\bar{\phi}_2>, |\phi_1\bar{\phi}_2>, |\bar{\phi}_1\phi_2>, |\phi_1\phi_2>, |\bar{\phi}_2\bar{\phi}_1>\\ 
+	\end{equation}
+	If we calculate the $S$ value for the above configurations, we can see that $|\phi_1\bar{\phi}_2>
+	and  |\bar{\phi}_1\phi_2>$ are not pure spin states. \\
+	\begin{equation}
+	\begin{split}
+	S^2|\phi_1\bar{\phi}_2>&=S^2\big[\phi_1(1)\phi_2(2)-\phi_1(1)\phi_2(2)\big]\alpha(1) \beta(2)\\
+		&=\big[\phi_1(1)\phi_2(2)-\phi_1(1)\phi_2(2)\big](\alpha(1) \beta(2)+\alpha(2)\beta(1)
+	\end{split}
+	\end{equation}
+	We can make them eigenfunctions of $S^2$ operator by taking a linear combination of appropriate terms
+	\\
+	\begin{equation}
+	\begin{split}
+		|\prescript{1}{}{\Psi}>=\frac{1}{\sqrt{2}}(|\phi_1\bar{\phi}_2>+|\phi_1\bar{\phi}_2>)\\	
+		|\prescript{3}{}{\Psi}>=\frac{1}{\sqrt{2}}(|\phi_1\bar{\phi}_2>-|\phi_1\bar{\phi}_2>)\\
+	\end{split}
+	\end{equation}
+	As discussed here, we now have three triplet and three singlet spin adapted states 
+	from two electrons in two orbitals model. Writing in terms of $H_2$ case that we discussed in 
+	section (2) and (3) we have the following singlet states :\\
+	\begin{equation}
+	\begin{split}
+		|\prescript{1}{}{\Psi_1}>&=|\phi_A\bar{\phi}_{\sigma}>\\
+		|\prescript{1}{}{\Psi_2}>&=|\phi_{\sigma^*}\bar{\phi}_{\sigma^*}>\\
+		|\prescript{1}{}{\Psi_3}>&=\frac{1}{\sqrt{2}}(|\phi_{\sigma}\bar{\phi}_{\sigma^*}>+
+		|\phi_{\sigma}\bar{\phi}_{\sigma^*}>)\\	
+	\end{split}
+	\end{equation}
+	Similarly the triplet states are :\\
+	\begin{equation}
+	\begin{split}
+		|\prescript{3}{}{\Psi_4}>&=|\phi_{\sigma}\phi_{\sigma^*}>\\
+		|\prescript{3}{}{\Psi_5}>&=|\bar{\phi}_{\sigma^*}\bar{\phi}_{\sigma}>\\
+		|\prescript{3}{}{\Psi_6}>&=\frac{1}{\sqrt{2}}(|\phi_{\sigma}\bar{\phi}_{\sigma^*}>-
+		|\phi_{\sigma}\bar{\phi}_{\sigma^*}>)\\
+	\end{split}
+	\end{equation}
 \section{Configurational Interaction Solution}
 	One way to look at our RHF solution of $H_2$ dissociation is to follow the two molecular orbitals produced $\phi_{\sigma}$ and $\phi_{sigma^*}$. 
 	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration $|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and write the energy in terms of atomic orbitals, \\
