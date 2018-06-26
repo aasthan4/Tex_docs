@@ -22,8 +22,9 @@
 	%write at the end
 \section{Restricted Hartree Fock Solution}
 	%define basis and form MOs
-	A simple qualitative description of dissociation process can be made by minimal basis $H_2$ model using 1S orbitals on each H atom as our stomic basis.
-	i.e $\phi_A$ and $\psi_B$ as atomic orbitals on hydrogen atom A and B. Let us write $\alpha$ and $\beta$ spin as $\phi$ and $\bar{\phi}$ respectively. \\
+	A simple qualitative description of dissociation process can be made by minimal basis $H_2$ model using 1s orbitals on each $H$ atom as our atomic basis
+	i.e $\phi_A^{1s}$ and $\phi_B^{1s}$ as atomic orbitals on hydrogen atom A and B.  
+	We will write $\alpha$ and $\beta$ spin as $\phi$ and $\bar{\phi}$ respectively. \\
 	Restricted Hartree Fock orbitals, determined by pure symmetry considerations are :\\ 
 	\begin{equation}
 	\begin{split}
@@ -40,9 +41,9 @@
 	\end{equation}
 	%edit the language
 	
-	The energy of this determinant based on applying the Fock operator will be $2h_{\sigma \sigma} + J_{\sigma \sigma}$ (one columbic interaction 
+	The energy of this determinant based can be written by inspection to be $2h_{\sigma \sigma} + J_{\sigma \sigma}$ (one coulombic interaction 
 	and no exchange possible between electrons of opposite spin) where h is the core 1 electron energy (kinetic and nuclear potential energy)
-	and J is the columbing 2 electron integral. Let us write our ground state determinant in terms of atomi orbitals.\\
+	and J is the coulombic 2 electron integral. Let us write our ground state determinant in terms of atomic orbitals.\\
 	\begin{equation}
 	\begin{split}
 		|\phi_{\sigma}\bar{\phi}_{\sigma}> &=\frac{1}{\sqrt{2}}\big[ \phi_{\sigma}(1)\bar{\phi}_{\sigma}(2)
@@ -57,14 +58,17 @@
 	|\phi_{\sigma}\bar{\phi}_{\sigma}>=\frac{1}{2\sqrt{2}(1+S_{AB})}(|\phi_A \bar{\phi}_A>+|\phi_A \bar{\phi}_B>+|\phi_B \bar{\phi}_A>+|\phi_B \bar{\phi}_B>)\\
 	\end{split}
 	\end{equation}
-	Note that two out of four configurations of RHF ground state determinant show ionic bond character. These determinants are the reason of
-	problamatic behavious in dissociation of $H_2$ as we shall see in the later sections. We can evaluate the total energy of this configuration by inspection. Each electron has a core kinetic and nuclear repulsion 
-	energy part $h_{\sigma \sigma}$ and the two electron have a columbic repulsion energy
-	 $J_{\sigma \sigma}$ :\\
+	
+	Note that $|\phi_A \bar{\phi}_A>$ and $|\phi_B \bar{\phi}_B>$ in the above configurations of Restricted Hartree Fock (RHF) ground 
+	state determinant show ionic bond character. 
+	These determinants are the reason of problematic behavior at dissociation of $H_2$ as we shall see in the later sections. 
+	Evaluating total energy of this configuration, each electron has one core part $h_{\sigma \sigma}$ and 
+	the two electrons have coulombic repulsion part $J_{\sigma \sigma}$, we get :\\
 	\begin{equation}
 		<\phi_{\sigma}\bar{\phi}_{\sigma}|H|\phi_{\sigma}\bar{\phi}_{\sigma}>
 		=2 h_{\sigma \sigma}+J_{\sigma \sigma}\\
 	\end{equation}
+	
 	We will analyse the two parts of energy one by one to see their behavior at the dissociation limit. \\
 	\begin{equation}
 	\begin{split}
@@ -74,8 +78,12 @@
 		&=\frac{1}{1+S_{AB}}(h_{AA}+h_{AB}+h_{BA}+h_{BB})\\
 	\end{split}
 	\end{equation}
-	As $R\rightarrow \infty$ $S_{AB}$ and $h_{AB}\rightarrow 0$. Thus $2h_{\sigma \sigma}=h_{AA}+h_{BB}$ at the dissociation
-	limit. Using eq(4) and expanding $J_{\sigma \sigma}$ in atomic orbitals at dissociation limit, we get :
+	as $R\rightarrow \infty$ $S_{AB}$ and $h_{AB}\rightarrow 0$, we get :
+	\begin{equation}
+		2h_{\sigma \sigma}=h_{AA}+h_{BB}
+	\end{equation}
+	
+	Similarly, using eq(4) and expanding $J_{\sigma \sigma}$ in atomic orbitals at dissociation limit, we get :
 	\begin{equation}
 	\begin{split}
 		J_{\sigma \sigma} &=(\phi_{\sigma} \phi_{\sigma}|\phi_{\sigma} \phi_{\sigma})\\
@@ -88,19 +96,20 @@
 	\end{equation}
 	\subsection{Discussion of results}
 	%discuss the source of the problem
-	From eq(6) and eq(7), we infer that the RHF energy of dissociated $H_2$ molecule is $h_{AA}+h_{BB}+
-	J_{AA}+J_{BB}$. Dissociated $H_2$ molecule essentially means $ 2 H $atoms at $\infty$ distance so 
-	they cannot interact. By inspection the energy of this system should be twice energy of $H$ atom. 
+	From eq(7) and eq(8), we infer that the RHF energy of dissociated $H_2$ molecule is $h_{AA}+h_{BB}+
+	J_{AA}+J_{BB}$. Dissociated $H_2$ molecule essentially means two $ H $atoms at $\infty$ distance so 
+	they cannot interact. The energy of this system should be twice the energy of $H$ atom. 
 	Thus our RHF calculation is an overestimation of the exact energy.  \\
+	
 	If we look at eq(4) we find that there are four determinants contributing to the molecular configuration, two of which are ionic in nature (1st and 4th). 
-	These determinants should not contribute to get the correct dissociated $H_2$ atoms as the atomic orbitals are spacially separated.
-	RHF molecular orbitals are unable to dissociate a molecule as they have same spacial $\Psi$ 
-	for both spin $\alpha$ and $\beta$. Thus we need additional degree of fredom in our 
-	orbital wavefunction to include different spacial wavefunctions for spin states. An Unrestricted 
-	Hartree Fock (UHF) can solve this problem. \\
+	These determinants should have no contribution as the two orbitals $\phi_A$ and $\phi_B$ are spatially separated.
+	This problem is due to the fact that RHF orbitals have the same spacial functions for $\alpha$ and $\beta$ spin. 
+	Thus we need additional degree of freedom in our 
+	orbital wavefunction to include different spacial wavefunctions for spin states. This results in an Unrestricted 
+	Hartree Fock(UHF) method . \\
 \section{Unrestricted Hartree Fock Solution}
-	Restricted set of orbitals were generated purely by symmetry. Unrestricted molecualar orbitals have different 
-	spacial functions for $\alpha$ and $\beta$ spin of the same orbital. A formulation to inorporate additional degree of freedom in symmetry 
+	Restricted set of orbitals were generated purely by symmetry. Unrestricted molecular orbitals have different 
+	spacial functions for $\alpha$ and $\beta$ spin of the same orbital. A formulation to incorporate additional degree of freedom in symmetry 
 	determined RHF molecular orbitals is to form UHF orbitals as a linear combination of RHF orbitals. \\
 	%We know that in the dissociated state $H_2$ minimal basis configuration will be $|\phi_A \bar{\phi}_B>$ where $\phi_a$ and $\phi_B$ are atomic orbitals of $H$ atoms. We can thus relax our RHF orbitals in such a way that they 
 	%finally form the above configuration at the dissociation limit. \\
@@ -117,15 +126,16 @@
 		\phi_{\sigma^*}^{\beta}=cos\theta \phi_{\sigma^*}-sin\theta \phi_{\sigma}\\
 	\end{split}
 	\end{equation}
-	The added degree of freedome here is in $\theta$ which can be varied from 0 to $45^o$. For our perposes it is sufficient to consider the 
-	values at the 0 and $45^o$. As we shall see, $\theta=0^o$ gives us RHF orbitals while $\theta\neq0^o$ 
-	produces UHF orbitals. At $0^o$ :\\
+	
+	The added degree of freedom here is in $\theta$ which can be varied from $0^o$ to $45^o$. For our purposes it is sufficient to consider the 
+	values at $0^o$ and $45^o$. At $0^o$ :\\
 	\begin{equation}
 		\begin{split}
 		\phi_{\sigma}^{\alpha}&=\phi_{\sigma}\\
 		\phi_{\sigma}^{\beta}&=\phi_{\sigma}\\
 		\end{split}
 	\end{equation}
+	
 	These are RHF ground state spin orbitals as discussed earlier. At $\theta=45^o$ we have :\\
 	\begin{equation}
 	\begin{split}
@@ -133,12 +143,14 @@
 		\phi_{\sigma}^{\beta}&=\frac{1}{\sqrt{2}}(\phi_{\sigma}-\phi_{\sigma^*})\\
 	\end{split}
 	\end{equation}
+	
 	In $\theta=45^o$, taking the dissociation limit case we have 
 	$\phi_{\sigma}^{\alpha}=\phi_A$ and $\phi_{\sigma}^{\beta}=\phi_B$ which are unrestricted set of 
 	molecular orbitals.
 	With the new set of orbitals our determinant becomes $|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}>
 	=|\phi_A\bar{\phi}_B>$.\\ 
-	Now let us calculate the energy of the ground state determinant at the dissociation limit with our new UHF orbitals. \\
+	
+	Let us calculate the energy of the ground state determinant at the dissociation limit with our new UHF orbitals. \\
 	\begin{equation}
 		\begin{split}
 			lim_{r\rightarrow \infty}<\Psi_o|H|\Psi_o>&=<\phi_{\sigma}^{\alpha}
@@ -147,25 +159,29 @@
 				&=h_{AA}+h_{BB}\\
 		\end{split}
 	\end{equation}
-	As shown here unlike RHF, UHF orbitals show correct behaviour of energy at the dissociation 
+	
+	As shown here unlike RHF, UHF orbitals show correct behavior of energy at the dissociation. 
 	limit of $H_2$ molecule.\\
 	\subsection{Discussion}
-	We see that the energy by UHF wavefunction $lim_{r\rightarrow\infty}|\Phi_o>=|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}>$ goes to
+	We see that the energy by UHF wavefunction $lim_{r\rightarrow\infty}|\Psi_o>=|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}>$ goes to
 	correct limit but the wavefunction is incorrect. The UHF wavefunction at the dissociation limit
-	 becomes $|\phi_A\bar{\phi}_B>$. But this is not a pure spin state in the case where electrons occupy
-	 different spacial orbitals, as will be discussed in the 
-	later sections. The correct wavefunction is :\\
+	 becomes $|\phi_A\bar{\phi}_B>$ in terms of atomic orbitals. This is not a pure spin state in the case where electrons occupy
+	 different spacial orbitals as in the UHF orbitals. We will discuss spin adaptation in detail in section 3.
+	For reference, the correct wavefunction is :\\
 	\begin{equation}
 	\begin{split}
 		Lim_{r\rightarrow\infty}|\Psi_o>=\frac{1}{\sqrt{2}}(|\phi_A\bar{\phi}_B>+|\bar{\phi}_A\phi_B>)
 	\end{split}
 	\end{equation}
 
+	In terms of molecular orbitals, this correct  wavefunction is a multi-determinant wavefunction :\\
+
 \subsection{Spin Operator}
 	Spin Operator is a vector quantity defined as follows :
 	\begin{equation}
 		\vec{s}=s_x \vec{i}+s_y\vec{j} + s_z\vec{k}\\
 	\end{equation}
+	
 	These spin operator components do not commute with each other and satisfy the following relations :
 	\begin{equation}
 	\begin{split}
@@ -174,6 +190,7 @@
 		[s_z,s_x]=is_y
 	\end{split}
 	\end{equation}
+	
 	We can derive a set of states of the spin of a particle as eigenfunctions of $s^2$ or one of the components of $\vec{s}$ conventionally taken to be $s_z$. \\
 	\begin{equation}
 	\begin{split}	
@@ -181,14 +198,15 @@
 		s_z|\phi>&=m_s|\phi>
 	\end{split}
 	\end{equation}
-	Where $s$ is the total spin of the particle and $m_s$ is the quantum number for the z conponent. 
+	where $s$ is the total spin of the particle and $m_s$ is the quantum number for the z component. 
 	Since electron is a spin half system, where $m_s=\frac{1}{2} , -\frac{1}{2}$. 
-	For our convinience, we can define the two states in the matrix representation as follows :\\
+	For our convenience, we can define the two states in the matrix representation as follows :\\
 	\begin{equation}
 		|\alpha>=\Big(\begin{matrix} 1\\ 0\end{matrix}\Big), 
 		|\beta>=\Big(\begin{matrix} 0\\ 1\end{matrix}\Big)\\
 	\end{equation}
-	This leads us to a more convinient defition of ladder operators:
+	
+	This leads us to a more convenient definition of ladder operators:
 	\begin{equation}
 	\begin{split}
 	s_+=\bigg(\begin{matrix} 0 & 1\\ 0 & 0\end{matrix}\bigg)\\
@@ -196,7 +214,7 @@
 	\end{split}
 	\end{equation}
 	where the action of these ladder operators can be seen as taking the spin state up 
-	like 'step up' through $s_+$ and down like 'step down' through $s_-$. They are 
+	 through $s_+$ and down through $s_-$. They are 
 	defined in terms for x and y components of $\vec{s}$ as follows :
 	\begin{equation}
 	\begin{split}
@@ -204,7 +222,8 @@
 		s_-&=s_x-is_y\\
 	\end{split}
 	\end{equation}
-	Using eq(18), (20) and (21) we can write the x, y and z components of our spin operator in the matrix 
+	
+	Using eq(17), (19) and (20) we can write the x, y and z components of our spin operator in the matrix 
 	representation as $s_k=\frac{1}{2} \sigma_k$. Here k=x, y and z and $\sigma_k$ is defined as follows:\\
 	\begin{equation}
 		\begin{split}
@@ -213,8 +232,9 @@
 		\sigma_3=\bigg(\begin{matrix}1 & 0\\ 0 & -1\end{matrix}\bigg)\\ 
 		\end{split}
 	\end{equation}
-	where 1, 2 and 3 refer to x, y and z components. This matrix formalism for spin $\frac{1}{2}$ systems 
-	was introduced by W. Pauli in 1926. We can also derive an expression for $s^2$ in terms of components
+	here 1, 2 and 3 refer to x, y and z components. This matrix formalism for spin $\frac{1}{2}$ systems 
+	was introduced by W. Pauli in 1926 and the matrices $\sigma_k$ are called Pauli matrices. 
+	We can also derive an expression for $s^2$ in terms of components
 	of $\vec{s}$ using eq(15) and (16) :\\
 	\begin{equation}
 	\begin{split}
@@ -222,14 +242,16 @@
 		s^2=s_-s_++s_z+s_z^2\\
 	\end{split}
 	\end{equation}
-	For manyelectron systems, the total spin sngular momentum is the sum of spin vectors for each 
+	
+	For many electron systems, the total spin angular momentum is the sum of spin vectors for each 
 	electron.\\
 	\begin{equation}
 	\begin{split}
 		\vec{S}=\sum_{i=1}^N \vec{s}\big(i\big)\\
 	\end{split}
 	\end{equation}	
-	Thus the total squared spin operators is :\\
+	
+	Thus the total squared spin operator is :\\
 	\begin{equation}
 	\begin{split}
 		S^2 &=\vec{S} .\vec{S}=\sum_{i=1}^N \sum_{j=1}^N \vec{s}\big(i\big)\vec{s}\big(j\big)\\
@@ -237,22 +259,23 @@
 			&=S_-S_++S_z+S_z^2
 	\end{split}
 	\end{equation}
+	
 	Since there is no spin part in our non-relativistic $H$, $S^2$ and $S_z$ commutes with $H$ 
-	i.e $[H,S^2]=0$	and $[H,S_z]=0$. Thus the exact eigenfunctions of Hamiltonian (exact wavefunctios) 
+	i.e $[H,S^2]=0$	and $[H,S_z]=0$. Thus the exact eigenfunctions of Hamiltonian (exact wavefunctions) 
 	are also eigenfunctions of $S^2$ and $S_z$ operators.\\ 
+	
 	Approximate solutions of $H$ are not necessarily pure spin states. However we would like to convert
 	them to spin adapted configurations to form eigenfunctions of $S^2$. We will describe the process 
 	through an example in the following sections. \\
 	
 
 	\subsection{Two Orbital two electron system}
-	To understand spin adapted configurations and the correct behavior of the wavefunction at 
-	the dissociation limit be, let us consider an example of a simple case of two electrons in two 
-	orbital $\phi_1 \phi_2$ case as in our minimal basis $H_2$. Two electrons can be arranged 
-	in two orbitals in the following 6 ways: \\
+	To understand spin adapted configurations, let us consider an example of a simple case of two electrons in two 
+	orbitals $\phi_1 \phi_2$. Two electrons can be arranged in two orbitals in the following 6 ways: \\
 	\begin{equation}
 		|\phi_1\bar{\phi}_1>, |\phi_2\bar{\phi}_2>, |\phi_1\bar{\phi}_2>, |\bar{\phi}_1\phi_2>, |\phi_1\phi_2>, |\bar{\phi}_2\bar{\phi}_1>\\ 
 	\end{equation}
+	
 	If we calculate the $S$ value for the above configurations, we can see that $|\phi_1\bar{\phi}_2>
 	and  |\bar{\phi}_1\phi_2>$ are not pure spin states. \\
 	\begin{equation}
@@ -261,6 +284,7 @@
 		&=\big[\phi_1(1)\phi_2(2)-\phi_1(2)\phi_2(1)\big](\alpha(1) \beta(2)+\alpha(2)\beta(1))
 	\end{split}
 	\end{equation}
+	
 	We can make them eigenfunctions of $S^2$ operator by taking a linear combination of appropriate terms
 	\\
 	\begin{equation}
@@ -269,6 +293,7 @@
 		|\prescript{3}{}{\Psi}>=\frac{1}{\sqrt{2}}(|\phi_1\bar{\phi}_2>-|\phi_1\bar{\phi}_2>)\\
 	\end{split}
 	\end{equation}
+	
 	As discussed here, we now have three triplet and three singlet spin adapted states 
 	from two electrons in two orbitals model. Writing in terms of $H_2$ case that we discussed in 
 	section (2) and (3) we have the following singlet states :\\
@@ -280,6 +305,7 @@
 		|\phi_{\sigma}\bar{\phi}_{\sigma^*}>)\\	
 	\end{split}
 	\end{equation}
+	
 	Similarly the triplet states are :\\
 	\begin{equation}
 	\begin{split}
@@ -290,20 +316,43 @@
 	\end{split}
 	\end{equation}
 \section{Configurational Interaction Solution}
-	Let us apply configuration Internaction method to treat the $H_2$ dissociation problem. The ground state 
-	$|\prescript{1}{}{\Psi_1}>=|\phi_A\bar{\phi}_{\sigma}>$ is a singlet, so we will include the three singlet configurations 
-	described in the above section in our CI wavefunction.\\
+	Let us apply configuration Interaction method to treat the $H_2$ dissociation problem using the configurations developed above. 
+	The full CI wavefunction ($\Phi_{CI})$ will include all six of the above configurations, but we can simplify the wavefunction as follows. 
+	The ground state $|\prescript{1}{}{\Psi_1}>=|\phi_A\bar{\phi}_{\sigma}>$ is a singlet, so we will include the three singlet configurations 
+	discussed in the above section in our CI wavefunction.\\
 	\begin{equation}
 	\begin{split}
-		|\Phi_o>=|\prescript{1}{}{\phi_1}>+c1|\prescript{1}{}{\phi_2}>+c2|\prescript{1}{}{\phi_3}>
+		|\Psi_{CI}>=|\prescript{1}{}{\phi_1}>+c1|\prescript{1}{}{\phi_2}>+c2|\prescript{1}{}{\phi_3}>
 	\end{split}
 	\end{equation}
-	As a next step, we can simplify our $\Phi_o$ by taking symmetry into consideration. Both $\Phi_o$ and the doubly excited determinant are gerade and 
-	will mix while $\prescript{1}{}{\Phi_3}$ is ungerade and thus will not. So we can simplify our $\Phi_{CI}$ as :\\
+	
+	We can simplify our $\Phi_o$ further by taking symmetry into consideration. Doubly excited determinant and the ground state both are of 
+	gerade symmetry and so will mix while $\prescript{1}{}{\Phi_3}$ is ungerade and thus will not. We can thus simplify our $\Phi_{CI}$ as :\\
 	\begin{equation}
-		|\Phi_o>=|\prescript{1}{}{\phi_1}>+c1|\prescript{1}{}{\phi_2}>
+		|\Phi_{CI}>=|\prescript{1}{}{\phi_1}>+c1|\prescript{1}{}{\phi_2}>
 	\end{equation}
-	One way to look at our RHF solution of $H_2$ dissociation is to follow the two molecular orbitals produced $\phi_{\sigma}$ and $\phi_{sigma^*}$. 
+	
+	Calculating the energy through this wavefunction we have :\\
+	\begin{equation}
+	\begin{split}
+		E&=<\Phi_{CI}|H|\Phi_{CI}>\\
+		 &=\big( \begin{matrix} c1 & c2 \end{matrix} \big)\bigg(\begin{matrix} H_{11} & H_{12} \\ H_{21} & H_{22} \end{matrix}\bigg)
+			 \bigg( \begin{matrix} c1\\c2\end{matrix}\bigg)\\
+		 &=c_1c_1H_{11}+c_1c_2h_{12}+c_1c_2H_{21}+c_2c_2H_{22}\\
+	\end{split}
+	\end{equation}
+	where $H$ matrix elements are defined as follows :\\
+	\begin{equation}
+	\begin{split}
+		H_{11}&=<\phi_{sigma}\phi_{sigma}|H|\phi_{sigma}\phi_{sigma}>=2 h_{\sigma\sigma}+J_{\sigma\sigma}\\
+		H_{12}&=<\phi_{sigma}\phi_{sigma}|H|\phi_{sigma^*}\phi_{sigma^*}>=\\
+		H_{21}&=<\phi_{sigma^*}\phi_{sigma^*}|H|\phi_{sigma}\phi_{sigma}>=\\
+		H_{22}&=<\phi_{sigma^*}\phi_{sigma^*}|H|\phi_{sigma^*}\phi_{sigma^*}>=2 h_{\sigma^*\sigma^*}+J_{\sigma^*\sigma^*}\\
+	\end{split}
+	\end{equation}
+
+
+	One way to look at our HF solutions of $H_2$ dissociation is to follow the two molecular orbitals produced $\phi_{\sigma}$ and $\phi_{sigma^*}$. 
 	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration 
 	$|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and 
 	write the energy in terms of atomic orbitals, \\
