@@ -22,7 +22,8 @@
 	%write at the end
 \section{Restricted Hartree Fock Solution}
 	%define basis and form MOs
-	A simple qualitative description of dissociation process can be made by minimal basis $H_2$ model using 1s orbitals on each $H$ atom as our atomic basis
+	A simple qualitative description of dissociation process can be made by minimal basis 
+	$H_2$ model using 1s orbitals on each $H$ atom as our basis
 	i.e $\phi_A^{1s}$ and $\phi_B^{1s}$ as atomic orbitals on hydrogen atom A and B.  
 	We will write $\alpha$ and $\beta$ spin as $\phi$ and $\bar{\phi}$ respectively. \\
 	Restricted Hartree Fock orbitals, determined by pure symmetry considerations are :\\ 
@@ -174,8 +175,14 @@
 	\end{split}
 	\end{equation}
 
-	In terms of molecular orbitals, this correct  wavefunction is a multi-determinant wavefunction :\\
-
+	In terms of UHF orbitals, this correct  wavefunction is a multi-determinant wavefunction :\\
+	\begin{equation}
+	\begin{split}
+		Lim_{r\rightarrow\infty}|\Psi_o>=\frac{1}{\sqrt{2}}(|\phi_{\sigma}^{\alpha}\bar
+		{\phi}_{\sigma}^{\beta}>+|\bar{\phi}_{\sigma}^{\beta}\phi_{\sigma}^{\beta}>)
+	\end{split}
+	\end{equation}
+	
 \subsection{Spin Operator}
 	Spin Operator is a vector quantity defined as follows :
 	\begin{equation}
@@ -299,7 +306,7 @@
 	section (2) and (3) we have the following singlet states :\\
 	\begin{equation}
 	\begin{split}
-		|\prescript{1}{}{\Psi_1}>&=|\phi_A\bar{\phi}_{\sigma}>\\
+		|\prescript{1}{}{\Psi_1}>&=|\phi_{\sigma}\bar{\phi}_{\sigma}>\\
 		|\prescript{1}{}{\Psi_2}>&=|\phi_{\sigma^*}\bar{\phi}_{\sigma^*}>\\
 		|\prescript{1}{}{\Psi_3}>&=\frac{1}{\sqrt{2}}(|\phi_{\sigma}\bar{\phi}_{\sigma^*}>+
 		|\phi_{\sigma}\bar{\phi}_{\sigma^*}>)\\	
@@ -316,62 +323,96 @@
 	\end{split}
 	\end{equation}
 \section{Configurational Interaction Solution}
-	Let us apply configuration Interaction method to treat the $H_2$ dissociation problem using the configurations developed above. 
-	The full CI wavefunction ($\Phi_{CI})$ will include all six of the above configurations, but we can simplify the wavefunction as follows. 
-	The ground state $|\prescript{1}{}{\Psi_1}>=|\phi_A\bar{\phi}_{\sigma}>$ is a singlet, so we will include the three singlet configurations 
-	discussed in the above section in our CI wavefunction.\\
+	One way to look at our HF solutions of $H_2$ dissociation is to follow the two molecular orbitals produced $\phi_{\sigma}$ and $\phi_{\sigma^*}$. 
+	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}>$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration 
+	$|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}>$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and 
+	write the energy in terms of atomic orbitals, we get:\\
 	\begin{equation}
 	\begin{split}
-		|\Psi_{CI}>=|\prescript{1}{}{\phi_1}>+c1|\prescript{1}{}{\phi_2}>+c2|\prescript{1}{}{\phi_3}>
+	2h_{\sigma \sigma} +J_{\sigma \sigma}=h_{AA}+h_{AB}+h_{BA}+h_{BB}+J_{AA}+J_{BB}\\
+	2h_{\sigma^* \sigma^*} +J_{\sigma \sigma}=h_{AA}-h_{AB}-h_{BA}+h_{BB}-J_{AA}+J_{BB}\\
 	\end{split}
 	\end{equation}
-	
-	We can simplify our $\Phi_o$ further by taking symmetry into consideration. Doubly excited determinant and the ground state both are of 
-	gerade symmetry and so will mix while $\prescript{1}{}{\Phi_3}$ is ungerade and thus will not. We can thus simplify our $\Phi_{CI}$ as :\\
+	At the dissociation limit, $h_{AB}=h_{BA}=0$ as $H_A$ and $H_B$ have no interaction. 
+	Thus the two states become degenerate. In HF we are calculating the energy of one of these 
+	states i.e $\phi_{\sigma}$. The total energy is further reduced by what is known as the non-
+	dynamic correlation or the mixing of the two degenrate states. 
+	One can also look at this degeneracy arising in eq() in UHF case. 
+	Since the two states have the same energy, it should be appropriate to chose a linear 
+	combination of the two states as our ground state wavefunction and use the configuration 
+	interaction (CI) method. The ground state CI wavefunction will be :\\
 	\begin{equation}
-		|\Phi_{CI}>=|\prescript{1}{}{\phi_1}>+c1|\prescript{1}{}{\phi_2}>
+		|\Phi_{CI}>=c_1|\prescript{1}{}{\Phi_{\sigma^2}}>+c_2|\prescript{1}{}{\phi_{\sigma^*2}}>
 	\end{equation}
-	
-	Calculating the energy through this wavefunction we have :\\
+	calculating the energy we have :\\
 	\begin{equation}
 	\begin{split}
 		E&=<\Phi_{CI}|H|\Phi_{CI}>\\
-		 &=\big( \begin{matrix} c1 & c2 \end{matrix} \big)\bigg(\begin{matrix} H_{11} & H_{12} \\ H_{21} & H_{22} \end{matrix}\bigg)
-			 \bigg( \begin{matrix} c1\\c2\end{matrix}\bigg)\\
-		 &=c_1c_1H_{11}+c_1c_2h_{12}+c_1c_2H_{21}+c_2c_2H_{22}\\
+		 &=\big( \begin{matrix} c_1^* & c_2^* \end{matrix} \big)\bigg(\begin{matrix} H_{11} & H_{12} \\ H_{21} & H_{22} \end{matrix}\bigg)
+			 \bigg( \begin{matrix} c_1\\c_2\end{matrix}\bigg)\\
+		 &=c_1^*c_1H_{11}+c_1^*c_2h_{12}+c_2^*c_1H_{21}+c_2^*c_2H_{22}\\
 	\end{split}
 	\end{equation}
 	where $H$ matrix elements are defined as follows :\\
 	\begin{equation}
 	\begin{split}
-		H_{11}&=<\phi_{sigma}\phi_{sigma}|H|\phi_{sigma}\phi_{sigma}>=2 h_{\sigma\sigma}+J_{\sigma\sigma}\\
-		H_{12}&=<\phi_{sigma}\phi_{sigma}|H|\phi_{sigma^*}\phi_{sigma^*}>=\\
-		H_{21}&=<\phi_{sigma^*}\phi_{sigma^*}|H|\phi_{sigma}\phi_{sigma}>=\\
-		H_{22}&=<\phi_{sigma^*}\phi_{sigma^*}|H|\phi_{sigma^*}\phi_{sigma^*}>=2 h_{\sigma^*\sigma^*}+J_{\sigma^*\sigma^*}\\
+		H_{11}&=<\phi_{\sigma}\phi_{\sigma}|H|\phi_{\sigma}\phi_{\sigma}>=2 h_{\sigma\sigma}+J_{\sigma\sigma}\\
+		H_{12}&=<\phi_{\sigma}\phi_{\sigma}|H|\phi_{\sigma^*}\phi_{\sigma^*}>=(\phi_{\sigma}
+		\phi_{\sigma}|\phi_{\sigma^*}\phi_{\sigma^*})\\
+		H_{21}&=<\phi_{\sigma^*}\phi_{\sigma^*}|H|\phi_{\sigma}\phi_{\sigma}>=(\phi_{\sigma^*}
+		\phi_{\sigma^*}|\phi_{\sigma}\phi_{\sigma})\\
+		H_{22}&=<\phi_{\sigma^*}\phi_{\sigma^*}|H|\phi_{\sigma^*}\phi_{\sigma^*}>=2 h_{\sigma^*\sigma^*}+J_{\sigma^*\sigma^*}\\
 	\end{split}
 	\end{equation}
 
 
-	One way to look at our HF solutions of $H_2$ dissociation is to follow the two molecular orbitals produced $\phi_{\sigma}$ and $\phi_{sigma^*}$. 
-	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration 
-	$|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and 
-	write the energy in terms of atomic orbitals, \\
+	Normalisation condition of $\Phi_{CI}$ leads to :\\
 	\begin{equation}
-	2h_{\sigma} +J_{\sigma \sigma}=h_{AA}+h_{AB}+h_{BA}+h_{BB}+J_{AA}+J_{BB}\\
-	2h_{\sigma} +J_{\sigma \sigma}=h_{AA}-h_{AB}-h_{BA}+h_{BB}-J_{AA}+J_{BB}\\
+	\begin{split}
+		<\Phi_{CI}|\Phi_{CI}>&=1\\
+		c_1^*c_1<\Psi_{\sigma^2}|\Psi_{\sigma^2}>+c_2^*c_2<\Psi_{\sigma^{*2}}|\Psi_{\sigma^{*2}}>&=1\\
+	\end{split}	
 	\end{equation}
-	At the equilibrium distance, $|\phi_{\sigma}>$ is clearly lower in energy but at the dissociation limit, $lim_{r\rightarrow\infty} h_AB=h_BA=0$. Thus the two states
-	become degenerate. In HF one is calculating the energy of one of these states i.e $\phi_{\sigma}$. The energy is even minimised by what is known as the non-
-	dynamic correlation. Thus taking a Configuration Interaction with both the states in $\Phi_{CI}$ gives the correct energy.\\
-	$|\Phi>=c1 |\phi_{\sigma}\bar{\phi}_{\sigma}>+c2|\phi_{\sigma^*}\bar{\phi}_{\sigma^*}>$\\
-	matrix equation\\
-	where the Hamiltonian coupling terms are :
-	$H12$ all \\
-	$E=c1H1$
-	We have an energy equation constrained by the normalisation equation $<\Phi|\Phi>=1$ which gives us $c1^2+c2^2=1$.
-	To solve for the minimum in energy based on the above constraint, we form the Lagrange function and find the minimum. 
-	$L=$
-	The above equation gives us 4 equations.
-	\subsection{Discussion}
+	
+	To solve for the minimum in energy eq(33) based on the above constraint eq(35), we form the Lagrange function and
+	 find its minima.  
+	\begin{equation}
+	\begin{split}
+	L&=\sum_{ij}c_i^*c_j<\phi_i|H_{ij}|\phi_j>-E(\sum_{i,j}c_i^*c_j<\phi_i|\phi_j>-1)\\
+	\delta L&=\sum_i\delta c_i^*\big[\sum_j H_{ij}c_j-ES_{ij}c_j\big]+c.c\\
+	\end{split}
+	\end{equation}
+	Here S is the overlap matrix of our basis. The $\delta L$ equations are simuntanious 
+	equations in $c_1$ and $c_2$, and are called secular equations. Since the inner part of the 
+	eq(36) has to go to 0 for secular equations to vanish, thus we form
+	the secular determinant:\\
+	\begin{equation}
+	\begin{split}
+		Hc=ScE
+	\end{split}
+	\end{equation}
+	here, $c$ is a matrix of eigenvectors and $E$ is a diagonal matrix of eigenvalues of $H$.\\
+
+	Our basis is orthogonal thus we can reduce this equation to $Hc=cE$. Solving this equation in the 
+	matrix form can be done by diagoanalisation of $H$ as :
+	\begin{equation}
+	\begin{split}
+		Hc&=cE\\
+		H&=cEc^{-1}\\
+	\end{split}
+	\end{equation}
+	diagonalising $H$ matrix therefore gives c as eigenvector matrix and energy in the diagonal 
+	eigenvalue matrix. Solving this equation in our example calculation
+	 we get our minimum energy at $c_1=\frac{1}{\sqrt{2}}$ and $c_2=-\frac{1}{\sqrt{2}}$. Our
+	 ground state wavefunction is :\\
+	\begin{equation}
+	\begin{split}
+		\Phi_{CI}=\frac{1}{\sqrt{2}}\big(\Psi_{\sigma^2}-\Psi_{\sigma^*2}\big)
+	\end{split}
+	\end{equation}
+	Unlike UHF and RHF, $\Phi_{CI}$ has equal contribution from both the degenerate state. 
+	Also, $E_{CI}=h_{AA}+h_{BB}$ which is the correct dissociation limit energy.\\ 
+	\subsection{Discussion}	
 	\subsection{Secular Equations and its solution}
+	Another way to derive the same secular determinant is th
 \end{document}  
