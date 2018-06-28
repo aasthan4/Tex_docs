@@ -4,7 +4,7 @@
 %\geometry{landscape}                		% Activate for rotated page geometry
 %\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
+								% TeX will automatically convert eps --rangle pdf in pdflatex		
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{mathtools}
@@ -36,7 +36,7 @@
 	where $S_{AB}$ is the overlap of atomic orbitals $\phi_A$ and $\phi_B$. The ground state staler determinant can be written as :\\
 	\begin{equation}
 	\begin{split}
-	|\phi_{\sigma}\bar{\phi}_{\sigma}>=\frac{1}{\sqrt{2}} \begin{vmatrix}\phi_{\sigma}(1) 
+	|\phi_{\sigma}\bar{\phi}_{\sigma}\rangle=\frac{1}{\sqrt{2}} \begin{vmatrix}\phi_{\sigma}(1) 
 	& \bar{\phi}_{\sigma}(1) \\  \phi_{\sigma}(2) & \bar{\phi}_{\sigma}(2) \\ \end{vmatrix}  \\
 	\end{split}
 	\end{equation}
@@ -47,7 +47,7 @@
 	and J is the coulombic 2 electron integral. Let us write our ground state determinant in terms of atomic orbitals.\\
 	\begin{equation}
 	\begin{split}
-		|\phi_{\sigma}\bar{\phi}_{\sigma}> &=\frac{1}{\sqrt{2}}\big[ \phi_{\sigma}(1)\bar{\phi}_{\sigma}(2)
+		|\phi_{\sigma}\bar{\phi}_{\sigma}\rangle &=\frac{1}{\sqrt{2}}\big[ \phi_{\sigma}(1)\bar{\phi}_{\sigma}(2)
 				-\phi_{\sigma}(2)\bar{\phi}_{\sigma}(1)\big]\\
 			&=\frac{1}{2\sqrt{2}(1+S_{AB})}\big[(\phi_A(1)+\phi_B(1))(\bar{\phi}_A(2)+\bar{\phi}
 			_B(2))-(\phi_A(2)+\phi_B(2))(\bar{\phi}_A(1)+\bar{\phi}_B(1))\big]\\
@@ -56,17 +56,17 @@
 	Expanding and rearranging, we get :\\
 	\begin{equation}
 	\begin{split}
-	|\phi_{\sigma}\bar{\phi}_{\sigma}>=\frac{1}{2\sqrt{2}(1+S_{AB})}(|\phi_A \bar{\phi}_A>+|\phi_A \bar{\phi}_B>+|\phi_B \bar{\phi}_A>+|\phi_B \bar{\phi}_B>)\\
+	|\phi_{\sigma}\bar{\phi}_{\sigma}\rangle=\frac{1}{2\sqrt{2}(1+S_{AB})}(|\phi_A \bar{\phi}_A\rangle+|\phi_A \bar{\phi}_B\rangle+|\phi_B \bar{\phi}_A\rangle+|\phi_B \bar{\phi}_B\rangle)\\
 	\end{split}
 	\end{equation}
 	
-	Note that $|\phi_A \bar{\phi}_A>$ and $|\phi_B \bar{\phi}_B>$ in the above configurations of Restricted Hartree Fock (RHF) ground 
+	Note that $|\phi_A \bar{\phi}_A\rangle$ and $|\phi_B \bar{\phi}_B\rangle$ in the above configurations of Restricted Hartree Fock (RHF) ground 
 	state determinant show ionic bond character. 
 	These determinants are the reason of problematic behavior at dissociation of $H_2$ as we shall see in the later sections. 
 	Evaluating total energy of this configuration, each electron has one core part $h_{\sigma \sigma}$ and 
 	the two electrons have coulombic repulsion part $J_{\sigma \sigma}$, we get :\\
 	\begin{equation}
-		<\phi_{\sigma}\bar{\phi}_{\sigma}|H|\phi_{\sigma}\bar{\phi}_{\sigma}>
+		\langle\phi_{\sigma}\bar{\phi}_{\sigma}|H|\phi_{\sigma}\bar{\phi}_{\sigma}\rangle
 		=2 h_{\sigma \sigma}+J_{\sigma \sigma}\\
 	\end{equation}
 	
@@ -112,7 +112,7 @@
 	Restricted set of orbitals were generated purely by symmetry. Unrestricted molecular orbitals have different 
 	spacial functions for $\alpha$ and $\beta$ spin of the same orbital. A formulation to incorporate additional degree of freedom in symmetry 
 	determined RHF molecular orbitals is to form UHF orbitals as a linear combination of RHF orbitals. \\
-	%We know that in the dissociated state $H_2$ minimal basis configuration will be $|\phi_A \bar{\phi}_B>$ where $\phi_a$ and $\phi_B$ are atomic orbitals of $H$ atoms. We can thus relax our RHF orbitals in such a way that they 
+	%We know that in the dissociated state $H_2$ minimal basis configuration will be $|\phi_A \bar{\phi}_B\rangle$ where $\phi_a$ and $\phi_B$ are atomic orbitals of $H$ atoms. We can thus relax our RHF orbitals in such a way that they 
 	%finally form the above configuration at the dissociation limit. \\
 	%equation for parameter addition \\
 	\begin{equation}
@@ -148,15 +148,15 @@
 	In $\theta=45^o$, taking the dissociation limit case we have 
 	$\phi_{\sigma}^{\alpha}=\phi_A$ and $\phi_{\sigma}^{\beta}=\phi_B$ which are unrestricted set of 
 	molecular orbitals.
-	With the new set of orbitals our determinant becomes $|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}>
-	=|\phi_A\bar{\phi}_B>$.\\ 
+	With the new set of orbitals our determinant becomes $|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}\rangle
+	=|\phi_A\bar{\phi}_B\rangle$.\\ 
 	
 	Let us calculate the energy of the ground state determinant at the dissociation limit with our new UHF orbitals. \\
 	\begin{equation}
 		\begin{split}
-			lim_{r\rightarrow \infty}<\Psi_o|H|\Psi_o>&=<\phi_{\sigma}^{\alpha}
-			\phi_{\sigma}^{\beta}|H|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}>\\
-				&=<\phi_A\phi_B|H|\phi_A\phi_B>\\
+			lim_{r\rightarrow \infty}\langle\Psi_o|H|\Psi_o\rangle&=\langle\phi_{\sigma}^{\alpha}
+			\phi_{\sigma}^{\beta}|H|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}\rangle\\
+				&=\langle\phi_A\phi_B|H|\phi_A\phi_B\rangle\\
 				&=h_{AA}+h_{BB}\\
 		\end{split}
 	\end{equation}
@@ -164,22 +164,22 @@
 	As shown here unlike RHF, UHF orbitals show correct behavior of energy at the dissociation. 
 	limit of $H_2$ molecule.\\
 	\subsection{Discussion}
-	We see that the energy by UHF wavefunction $lim_{r\rightarrow\infty}|\Psi_o>=|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}>$ goes to
+	We see that the energy by UHF wavefunction $lim_{r\rightarrow\infty}|\Psi_o\rangle=|\phi_{\sigma}^{\alpha}\phi_{\sigma}^{\beta}\rangle$ goes to
 	correct limit but the wavefunction is incorrect. The UHF wavefunction at the dissociation limit
-	 becomes $|\phi_A\bar{\phi}_B>$ in terms of atomic orbitals. This is not a pure spin state in the case where electrons occupy
+	 becomes $|\phi_A\bar{\phi}_B\rangle$ in terms of atomic orbitals. This is not a pure spin state in the case where electrons occupy
 	 different spacial orbitals as in the UHF orbitals. We will discuss spin adaptation in detail in section 3.
 	For reference, the correct wavefunction is :\\
 	\begin{equation}
 	\begin{split}
-		Lim_{r\rightarrow\infty}|\Psi_o>=\frac{1}{\sqrt{2}}(|\phi_A\bar{\phi}_B>+|\bar{\phi}_A\phi_B>)
+		Lim_{r\rightarrow\infty}|\Psi_o\rangle=\frac{1}{\sqrt{2}}(|\phi_A\bar{\phi}_B\rangle+|\bar{\phi}_A\phi_B\rangle)
 	\end{split}
 	\end{equation}
 
 	In terms of UHF orbitals, this correct  wavefunction is a multi-determinant wavefunction :\\
 	\begin{equation}
 	\begin{split}
-		Lim_{r\rightarrow\infty}|\Psi_o>=\frac{1}{\sqrt{2}}(|\phi_{\sigma}^{\alpha}\bar
-		{\phi}_{\sigma}^{\beta}>+|\bar{\phi}_{\sigma}^{\beta}\phi_{\sigma}^{\beta}>)
+		Lim_{r\rightarrow\infty}|\Psi_o\rangle=\frac{1}{\sqrt{2}}(|\phi_{\sigma}^{\alpha}\bar
+		{\phi}_{\sigma}^{\beta}\rangle+|\bar{\phi}_{\sigma}^{\beta}\phi_{\sigma}^{\beta}\rangle)
 	\end{split}
 	\end{equation}
 	
@@ -201,16 +201,16 @@
 	We can derive a set of states of the spin of a particle as eigenfunctions of $s^2$ or one of the components of $\vec{s}$ conventionally taken to be $s_z$. \\
 	\begin{equation}
 	\begin{split}	
-		s^2|\phi>&=s(s+1)|\phi>\\
-		s_z|\phi>&=m_s|\phi>
+		s^2|\phi\rangle&=s(s+1)|\phi\rangle\\
+		s_z|\phi\rangle&=m_s|\phi\rangle
 	\end{split}
 	\end{equation}
 	where $s$ is the total spin of the particle and $m_s$ is the quantum number for the z component. 
 	Since electron is a spin half system, where $m_s=\frac{1}{2} , -\frac{1}{2}$. 
 	For our convenience, we can define the two states in the matrix representation as follows :\\
 	\begin{equation}
-		|\alpha>=\Big(\begin{matrix} 1\\ 0\end{matrix}\Big), 
-		|\beta>=\Big(\begin{matrix} 0\\ 1\end{matrix}\Big)\\
+		|\alpha\rangle=\Big(\begin{matrix} 1\\ 0\end{matrix}\Big), 
+		|\beta\rangle=\Big(\begin{matrix} 0\\ 1\end{matrix}\Big)\\
 	\end{equation}
 	
 	This leads us to a more convenient definition of ladder operators:
@@ -280,14 +280,14 @@
 	To understand spin adapted configurations, let us consider an example of a simple case of two electrons in two 
 	orbitals $\phi_1 \phi_2$. Two electrons can be arranged in two orbitals in the following 6 ways: \\
 	\begin{equation}
-		|\phi_1\bar{\phi}_1>, |\phi_2\bar{\phi}_2>, |\phi_1\bar{\phi}_2>, |\bar{\phi}_1\phi_2>, |\phi_1\phi_2>, |\bar{\phi}_2\bar{\phi}_1>\\ 
+		|\phi_1\bar{\phi}_1\rangle, |\phi_2\bar{\phi}_2\rangle, |\phi_1\bar{\phi}_2\rangle, |\bar{\phi}_1\phi_2\rangle, |\phi_1\phi_2\rangle, |\bar{\phi}_2\bar{\phi}_1\rangle\\ 
 	\end{equation}
 	
-	If we calculate the $S$ value for the above configurations, we can see that $|\phi_1\bar{\phi}_2>
-	and  |\bar{\phi}_1\phi_2>$ are not pure spin states. \\
+	If we calculate the $S$ value for the above configurations, we can see that $|\phi_1\bar{\phi}_2\rangle
+	and  |\bar{\phi}_1\phi_2\rangle$ are not pure spin states. \\
 	\begin{equation}
 	\begin{split}
-	S^2|\phi_1\bar{\phi}_2>&=S^2\big[\phi_1(1)\phi_2(2)\alpha(1) \beta(2)-\phi_1(2)\phi_2(1)\alpha(2) \beta(1)\big]\\
+	S^2|\phi_1\bar{\phi}_2\rangle&=S^2\big[\phi_1(1)\phi_2(2)\alpha(1) \beta(2)-\phi_1(2)\phi_2(1)\alpha(2) \beta(1)\big]\\
 		&=\big[\phi_1(1)\phi_2(2)-\phi_1(2)\phi_2(1)\big](\alpha(1) \beta(2)+\alpha(2)\beta(1))
 	\end{split}
 	\end{equation}
@@ -296,8 +296,8 @@
 	\\
 	\begin{equation}
 	\begin{split}
-		|\prescript{1}{}{\Psi}>=\frac{1}{\sqrt{2}}(|\phi_1\bar{\phi}_2>+|\phi_1\bar{\phi}_2>)\\	
-		|\prescript{3}{}{\Psi}>=\frac{1}{\sqrt{2}}(|\phi_1\bar{\phi}_2>-|\phi_1\bar{\phi}_2>)\\
+		|\prescript{1}{}{\Psi}\rangle=\frac{1}{\sqrt{2}}(|\phi_1\bar{\phi}_2\rangle+|\phi_1\bar{\phi}_2\rangle)\\	
+		|\prescript{3}{}{\Psi}\rangle=\frac{1}{\sqrt{2}}(|\phi_1\bar{\phi}_2\rangle-|\phi_1\bar{\phi}_2\rangle)\\
 	\end{split}
 	\end{equation}
 	
@@ -306,26 +306,26 @@
 	section (2) and (3) we have the following singlet states :\\
 	\begin{equation}
 	\begin{split}
-		|\prescript{1}{}{\Psi_1}>&=|\phi_{\sigma}\bar{\phi}_{\sigma}>\\
-		|\prescript{1}{}{\Psi_2}>&=|\phi_{\sigma^*}\bar{\phi}_{\sigma^*}>\\
-		|\prescript{1}{}{\Psi_3}>&=\frac{1}{\sqrt{2}}(|\phi_{\sigma}\bar{\phi}_{\sigma^*}>+
-		|\phi_{\sigma}\bar{\phi}_{\sigma^*}>)\\	
+		|\prescript{1}{}{\Psi^{\prime}}\rangle&=|\phi_{\sigma}\bar{\phi}_{\sigma}\rangle\\
+		|\prescript{1}{}{\Psi^{\prime \prime}}\rangle&=|\phi_{\sigma^*}\bar{\phi}_{\sigma^*}\rangle\\
+		|\prescript{1}{}{\Psi^{\prime \prime \prime}}\rangle&=\frac{1}{\sqrt{2}}(|\phi_{\sigma}
+		\bar{\phi}_{\sigma^*}\rangle+|\phi_{\sigma}\bar{\phi}_{\sigma^*}\rangle)\\	
 	\end{split}
 	\end{equation}
 	
 	Similarly the triplet states are :\\
 	\begin{equation}
 	\begin{split}
-		|\prescript{3}{}{\Psi_4}>&=|\phi_{\sigma}\phi_{\sigma^*}>\\
-		|\prescript{3}{}{\Psi_5}>&=|\bar{\phi}_{\sigma^*}\bar{\phi}_{\sigma}>\\
-		|\prescript{3}{}{\Psi_6}>&=\frac{1}{\sqrt{2}}(|\phi_{\sigma}\bar{\phi}_{\sigma^*}>-
-		|\phi_{\sigma}\bar{\phi}_{\sigma^*}>)\\
+		|\prescript{3}{}{\Psi^{\prime}}\rangle&=|\phi_{\sigma}\phi_{\sigma^*}\rangle\\
+		|\prescript{3}{}{\Psi^{\prime \prime}}\rangle&=|\bar{\phi}_{\sigma^*}\bar{\phi}_{\sigma}\rangle\\
+		|\prescript{3}{}{\Psi^{\prime \prime \prime }}\rangle&=\frac{1}{\sqrt{2}}
+		(|\phi_{\sigma}\bar{\phi}_{\sigma^*}\rangle-|\phi_{\sigma}\bar{\phi}_{\sigma^*}\rangle)\\
 	\end{split}
 	\end{equation}
 \section{Configurational Interaction Solution}
 	One way to look at our HF solutions of $H_2$ dissociation is to follow the two molecular orbitals produced $\phi_{\sigma}$ and $\phi_{\sigma^*}$. 
-	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}>$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration 
-	$|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}>$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and 
+	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}\rangle$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration 
+	$|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}\rangle$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and 
 	write the energy in terms of atomic orbitals, we get:\\
 	\begin{equation}
 	\begin{split}
@@ -342,12 +342,12 @@
 	combination of the two states as our ground state wavefunction and use the configuration 
 	interaction (CI) method. The ground state CI wavefunction will be :\\
 	\begin{equation}
-		|\Phi_{CI}>=c_1|\prescript{1}{}{\Phi_{\sigma^2}}>+c_2|\prescript{1}{}{\phi_{\sigma^*2}}>
+		|\Phi_{CI}\rangle=c_1|\prescript{1}{}{\Phi_{\sigma^2}}\rangle+c_2|\prescript{1}{}{\phi_{\sigma^{*2}}}\rangle
 	\end{equation}
 	calculating the energy we have :\\
 	\begin{equation}
 	\begin{split}
-		E&=<\Phi_{CI}|H|\Phi_{CI}>\\
+		E&=\langle\Phi_{CI}|H|\Phi_{CI}\rangle\\
 		 &=\big( \begin{matrix} c_1^* & c_2^* \end{matrix} \big)\bigg(\begin{matrix} H_{11} & H_{12} \\ H_{21} & H_{22} \end{matrix}\bigg)
 			 \bigg( \begin{matrix} c_1\\c_2\end{matrix}\bigg)\\
 		 &=c_1^*c_1H_{11}+c_1^*c_2h_{12}+c_2^*c_1H_{21}+c_2^*c_2H_{22}\\
@@ -356,12 +356,13 @@
 	where $H$ matrix elements are defined as follows :\\
 	\begin{equation}
 	\begin{split}
-		H_{11}&=<\phi_{\sigma}\phi_{\sigma}|H|\phi_{\sigma}\phi_{\sigma}>=2 h_{\sigma\sigma}+J_{\sigma\sigma}\\
-		H_{12}&=<\phi_{\sigma}\phi_{\sigma}|H|\phi_{\sigma^*}\phi_{\sigma^*}>=(\phi_{\sigma}
+		H_{11}&=\langle\phi_{\sigma}\phi_{\sigma}|H|\phi_{\sigma}\phi_{\sigma}\rangle=2 h_{\sigma\sigma}+J_{\sigma\sigma}\\
+		H_{12}&=\langle\phi_{\sigma}\phi_{\sigma}|H|\phi_{\sigma^*}\phi_{\sigma^*}\rangle=(\phi_{\sigma}
 		\phi_{\sigma}|\phi_{\sigma^*}\phi_{\sigma^*})\\
-		H_{21}&=<\phi_{\sigma^*}\phi_{\sigma^*}|H|\phi_{\sigma}\phi_{\sigma}>=(\phi_{\sigma^*}
+		H_{21}&=\langle\phi_{\sigma^*}\phi_{\sigma^*}|H|\phi_{\sigma}\phi_{\sigma}\rangle=(\phi_{\sigma^*}
 		\phi_{\sigma^*}|\phi_{\sigma}\phi_{\sigma})\\
-		H_{22}&=<\phi_{\sigma^*}\phi_{\sigma^*}|H|\phi_{\sigma^*}\phi_{\sigma^*}>=2 h_{\sigma^*\sigma^*}+J_{\sigma^*\sigma^*}\\
+		H_{22}&=\langle\phi_{\sigma^*}\phi_{\sigma^*}|H|\phi_{\sigma^*}\phi_{\sigma^*}\rangle=2 h_
+		{\sigma^*\sigma^*}+J_{\sigma^*\sigma^*}
 	\end{split}
 	\end{equation}
 
@@ -369,8 +370,8 @@
 	Normalisation condition of $\Phi_{CI}$ leads to :\\
 	\begin{equation}
 	\begin{split}
-		<\Phi_{CI}|\Phi_{CI}>&=1\\
-		c_1^*c_1<\Psi_{\sigma^2}|\Psi_{\sigma^2}>+c_2^*c_2<\Psi_{\sigma^{*2}}|\Psi_{\sigma^{*2}}>&=1\\
+		\langle\Phi_{CI}|\Phi_{CI}\rangle&=1\\
+		c_1^*c_1\langle\Psi_{\sigma^2}|\Psi_{\sigma^2}\rangle+c_2^*c_2\langle\Psi_{\sigma^{*2}}|\Psi_{\sigma^{*2}}\rangle&=1\\
 	\end{split}	
 	\end{equation}
 	
@@ -378,7 +379,7 @@
 	 find its minima.  
 	\begin{equation}
 	\begin{split}
-	L&=\sum_{ij}c_i^*c_j<\phi_i|H_{ij}|\phi_j>-E(\sum_{i,j}c_i^*c_j<\phi_i|\phi_j>-1)\\
+	L&=\sum_{ij}c_i^*c_j\langle\phi_i|H_{ij}|\phi_j\rangle-E(\sum_{i,j}c_i^*c_j\langle\phi_i|\phi_j\rangle-1)\\
 	\delta L&=\sum_i\delta c_i^*\big[\sum_j H_{ij}c_j-ES_{ij}c_j\big]+c.c\\
 	\end{split}
 	\end{equation}
@@ -407,12 +408,60 @@
 	 ground state wavefunction is :\\
 	\begin{equation}
 	\begin{split}
-		\Phi_{CI}=\frac{1}{\sqrt{2}}\big(\Psi_{\sigma^2}-\Psi_{\sigma^*2}\big)
+		\Phi_{CI}=\frac{1}{\sqrt{2}}\big(\Psi_{\sigma^2}-\Psi_{\sigma^{*2}}\big)
 	\end{split}
 	\end{equation}
 	Unlike UHF and RHF, $\Phi_{CI}$ has equal contribution from both the degenerate state. 
 	Also, $E_{CI}=h_{AA}+h_{BB}$ which is the correct dissociation limit energy.\\ 
 	\subsection{Discussion}	
-	\subsection{Secular Equations and its solution}
-	Another way to derive the same secular determinant is th
+	\subsection{Secular Determinant}
+	To minimise the energy expectation value in the above section, we formed a Lagrangian function through the matrix equations eq(33) and eq(35), 
+	which led us to derive the secular determinant (eq(37)). We also showed that solving the secular determinant is equivalent
+	 to diagonalising $H$ matrix and finding the eigenvectors and eigenvalues as our solution. Another
+	 approach to come to the minimum energy of the system is to start from a trial 
+	wavefunction $\Phi$ and use functional variation and minimise the expectation value of energy. This process should lead to the same result. \\ 
+	Let us take and arbitrary starting wavefunction $\Phi$ as ground state wavefunction and 
+	write the energy expectation value as follows:\\
+	\begin{equation}
+	\begin{split}
+		\langle\Phi|H|\Phi\rangle=\langle\Phi|E|\Phi\rangle\\
+	\end{split}
+	\end{equation}
+	To find the wavefunction with the lowest energy, we can vary our 
+	wavefunction $\Phi$ by a small arbitrary amount. This  :
+	\begin{equation}
+	\begin{split}
+		\Phi\rightarrow\Phi+\delta\Phi\\
+	\end{split}
+	\end{equation}
+	$\Phi$ can be written in terms of basis function as :
+	\begin{equation}
+	\begin{split}
+		|\Phi\rangle=\sum_{i} c_{i}|\phi_{i}\rangle
+	\end{split}
+	\end{equation}
+	Now varying $\Phi$ is equivalent to varying coefficients associated to the basis functions 
+	$c_i's$.	this allows us to write:\\
+	\begin{equation}
+	\begin{split}
+		\langle\Phi|H|\Phi\rangle&=\sum_{ij}c_i^*c_j\langle\phi_i|H|\phi_j\rangle\\
+	\end{split}
+	\end{equation}
+	subject to the constraint that the trial wavefunction is normalized :\\
+	\begin{equation}
+	\begin{split}
+		\langle\Phi|\Phi\rangle&=1\\
+		\sum_{ij}c_i^*c_j\langle\phi_i|H|\phi_j\rangle&=1\\
+	\end{split}
+	\end{equation}	
+	We have succesfully converted an eq(40) to a  matrix equation where we can vary $\Phi$ as variation 
+	in coefficient matrix, similar to section 3.2. Further, we can now form a Lagrangian and 
+	minimise with respect to coefficients $c_i's$ as in eq(36) and eq(37) to get :
+	\begin{equation}
+	\begin{split}
+		Hc=ScE
+	\end{split}
+	\end{equation}
+	 Matrix equations can be implemented in a program to calculate 
+	energy and wavefunctions. 
 \end{document}  
