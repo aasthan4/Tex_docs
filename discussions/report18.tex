@@ -178,8 +178,8 @@
 	In terms of UHF orbitals, this correct  wavefunction is a multi-determinant wavefunction :\\
 	\begin{equation}
 	\begin{split}
-		Lim_{r\rightarrow\infty}|\Psi_o\rangle=\frac{1}{\sqrt{2}}(|\phi_{\sigma}^{\alpha}\bar
-		{\phi}_{\sigma}^{\beta}\rangle+|\bar{\phi}_{\sigma}^{\beta}\phi_{\sigma}^{\beta}\rangle)
+		Lim_{r\rightarrow\infty}|\Psi_o\rangle=\frac{1}{\sqrt{2}}(|\phi_{\sigma}^{\alpha}
+		\phi_{\sigma}^{\beta}\rangle-|\phi_{\sigma^*}^{\alpha}\phi_{\sigma^*}^{\beta}\rangle)
 	\end{split}
 	\end{equation}
 	
@@ -323,26 +323,27 @@
 	\end{split}
 	\end{equation}
 \section{Configurational Interaction Solution}
-	One way to look at our HF solutions of $H_2$ dissociation is to follow the two molecular orbitals produced $\phi_{\sigma}$ and $\phi_{\sigma^*}$. 
-	The energy of configuration $|\phi_{\sigma} \bar{\phi}_{\sigma}\rangle$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration 
-	$|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}\rangle$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. If we expand the molecular orbitals and 
-	write the energy in terms of atomic orbitals, we get:\\
+	One way to look at HF solutions of $H_2$ dissociation is to follow two configurations $|\phi_{\sigma}\bar{\phi}_{\sigma}\rangle$ and $|\phi_{\sigma^*}\bar{\phi}_{\sigma^*}\rangle$. 
+	The energy of configuration $|\phi_{\sigma}\bar{\phi}_{\sigma}\rangle$ is $2h_{\sigma} +J_{\sigma \sigma}$ and of configuration 
+	$|\phi_{\sigma^*} \bar{\phi}_{\sigma^*}\rangle$ is $2h_{\sigma^*} +J_{\sigma^* \sigma^*}$. Expanding the molecular orbitals and 
+	writing the energy in terms of atomic orbitals, we get:\\
 	\begin{equation}
 	\begin{split}
 	2h_{\sigma \sigma} +J_{\sigma \sigma}=h_{AA}+h_{AB}+h_{BA}+h_{BB}+J_{AA}+J_{BB}\\
 	2h_{\sigma^* \sigma^*} +J_{\sigma \sigma}=h_{AA}-h_{AB}-h_{BA}+h_{BB}-J_{AA}+J_{BB}\\
 	\end{split}
 	\end{equation}
+
 	At the dissociation limit, $h_{AB}=h_{BA}=0$ as $H_A$ and $H_B$ have no interaction. 
 	Thus the two states become degenerate. In HF we are calculating the energy of one of these 
-	states i.e $\phi_{\sigma}$. The total energy is further reduced by what is known as the non-
-	dynamic correlation or the mixing of the two degenrate states. 
-	One can also look at this degeneracy arising in eq() in UHF case. 
+	states i.e $|\phi_{\sigma}\bar{\phi}_{\sigma}\rangle$. The total energy is further reduced by what is known as the non-
+	dynamic correlation or the mixing of the two degenerate states. 
+	One can also look at this degeneracy arising in eq(15) in UHF case. 
 	Since the two states have the same energy, it should be appropriate to chose a linear 
-	combination of the two states as our ground state wavefunction and use the configuration 
+	combination of the two states as our ground state wavefunction and use configuration 
 	interaction (CI) method. The ground state CI wavefunction will be :\\
 	\begin{equation}
-		|\Phi_{CI}\rangle=c_1|\prescript{1}{}{\Phi_{\sigma^2}}\rangle+c_2|\prescript{1}{}{\phi_{\sigma^{*2}}}\rangle
+		|\Phi_{CI}\rangle=c_1|\prescript{1}{}{\Psi_{\sigma^2}}\rangle+c_2|\prescript{1}{}{\Psi_{\sigma^{*2}}}\rangle
 	\end{equation}
 	calculating the energy we have :\\
 	\begin{equation}
@@ -376,14 +377,14 @@
 	\end{equation}
 	
 	To solve for the minimum in energy eq(33) based on the above constraint eq(35), we form the Lagrange function and
-	 find its minima.  
+	 find its minima with respect to $c_1$ and $c_2$.  
 	\begin{equation}
 	\begin{split}
 	L&=\sum_{ij}c_i^*c_j\langle\phi_i|H_{ij}|\phi_j\rangle-E(\sum_{i,j}c_i^*c_j\langle\phi_i|\phi_j\rangle-1)\\
 	\delta L&=\sum_i\delta c_i^*\big[\sum_j H_{ij}c_j-ES_{ij}c_j\big]+c.c\\
 	\end{split}
 	\end{equation}
-	Here S is the overlap matrix of our basis. The $\delta L$ equations are simuntanious 
+	here S is the overlap matrix of our basis i.e $S_{ij}=\langle\phi_{i}|\phi_{j}\rangle$. The $\delta L$ equations are simultaneous 
 	equations in $c_1$ and $c_2$, and are called secular equations. Since the inner part of the 
 	eq(36) has to go to 0 for secular equations to vanish, thus we form
 	the secular determinant:\\
@@ -394,8 +395,8 @@
 	\end{equation}
 	here, $c$ is a matrix of eigenvectors and $E$ is a diagonal matrix of eigenvalues of $H$.\\
 
-	Our basis is orthogonal thus we can reduce this equation to $Hc=cE$. Solving this equation in the 
-	matrix form can be done by diagoanalisation of $H$ as :
+	Our basis is orthogonal i.e $\langle\phi_{\sigma}|\phi_{\sigma^*}\rangle=0$ thus we can reduce this equation to $Hc=cE$. Solving this equation in the 
+	matrix form can be done by diagonalization of $H$ as :
 	\begin{equation}
 	\begin{split}
 		Hc&=cE\\
@@ -419,7 +420,8 @@
 	which led us to derive the secular determinant (eq(37)). We also showed that solving the secular determinant is equivalent
 	 to diagonalising $H$ matrix and finding the eigenvectors and eigenvalues as our solution. Another
 	 approach to come to the minimum energy of the system is to start from a trial 
-	wavefunction $\Phi$ and use functional variation and minimise the expectation value of energy. This process should lead to the same result. \\ 
+	wavefunction $\Phi$ and use functional variation to minimise the expectation value of energy. This process should lead to the same result. \\ 
+	
 	Let us take and arbitrary starting wavefunction $\Phi$ as ground state wavefunction and 
 	write the energy expectation value as follows:\\
 	\begin{equation}
@@ -428,7 +430,7 @@
 	\end{split}
 	\end{equation}
 	To find the wavefunction with the lowest energy, we can vary our 
-	wavefunction $\Phi$ by a small arbitrary amount. This  :
+	wavefunction $\Phi$ by a small arbitrary amount. :
 	\begin{equation}
 	\begin{split}
 		\Phi\rightarrow\Phi+\delta\Phi\\
@@ -441,7 +443,7 @@
 	\end{split}
 	\end{equation}
 	Now varying $\Phi$ is equivalent to varying coefficients associated to the basis functions 
-	$c_i's$.	this allows us to write:\\
+	$c_i's$. Thus we will minimise :\\
 	\begin{equation}
 	\begin{split}
 		\langle\Phi|H|\Phi\rangle&=\sum_{ij}c_i^*c_j\langle\phi_i|H|\phi_j\rangle\\
@@ -454,14 +456,12 @@
 		\sum_{ij}c_i^*c_j\langle\phi_i|H|\phi_j\rangle&=1\\
 	\end{split}
 	\end{equation}	
-	We have succesfully converted an eq(40) to a  matrix equation where we can vary $\Phi$ as variation 
-	in coefficient matrix, similar to section 3.2. Further, we can now form a Lagrangian and 
+	We have successfully converted an eq(40) to a  matrix equation where we can vary $\Phi$ as variation 
+	in coefficient matrix, similar to section 3.2. Further, we form a Lagrange function and 
 	minimise with respect to coefficients $c_i's$ as in eq(36) and eq(37) to get :
 	\begin{equation}
 	\begin{split}
 		Hc=ScE
 	\end{split}
 	\end{equation}
-	 Matrix equations can be implemented in a program to calculate 
-	energy and wavefunctions. 
 \end{document}  
